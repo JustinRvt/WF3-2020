@@ -23,7 +23,7 @@
     </p> correspond à sa fin
     On appele cela, une balise jumelle.
     -->
-
+    <p id="top">Haut de page</p>
     <p>
         Lorem ipsum dolor sitamet consectetur   adipisicing elit. Repellendus consectetur perspiciatis, sunt omnis beatae quod iusto magni aperiam dicta nobis repudiandae, ipsa, dolorum possimus doloribus hic quos aspernatur doloremque! Exercitationem qui culpa tenetur mollitia excepturi nobis magnam dignissimos cupiditate quod. Error porro quae a. Atque repellat porro at fugit accusantium.
     </p>
@@ -75,5 +75,32 @@
         <li>Item 3</li>
     </ol>
 
+    <!-- 3- LES LIENS HYPERTEXTES -->
+
+    <!-- Un site web peut être composé de plusieurs pages, il nous faut donc des liens pour naviguer entre elles (voire d'un bloc à l'autre d'une même page) mais aussi pour nous rendre sur des sites extérieurs au notre. -->
+
+    <!-- 3.1- Lien vers un site externe -->
+    <p id="anchors">
+        <!-- J'insère un lien et je rajoute l'attribut target avec la valeur _blank afin que le site s'ouvre dans un nouvel onglet -->
+        Suivez nos activités <a href="https://www.google.fr" target="_blank">sur Google</a>
+    </p>
+    <!-- 3.2- Lien vers une page de mon site -->
+    <p>
+        Besoin d'aide ? <a href="contact.html">Contactez nous !</a>
+    </p>
+    <!-- Que se passe-t-il si jamais la page que je veux afficher se trouve dans un dossier séparé ?
+    Il faudra utiliser les chemins relatifs ! Voire blog/accueil.html pour comprendre comment remonter (../monfichier.html)-->
+     <!-- L'attribut title, permet d'afficher une infobulle -->
+    <p>Envie de connaître toutes nos activités ? <a href="blog/accueil.html" title="Vous ne le regrettez pas !">Rejoignez le club lecture sur notre blog</a></p>
+    <!-- 3.3 Lien vers un endroit spécifique d'une même page -->
+    <!-- On fait référence à un élément de notre page avec un id (identifiant unique), en l'occurence id="top" -->
+   
+    <p>Je souhaite  <a href="#top" >revenir en haut de mon site</a></p>
+    <!-- 3.4 Lien pour envoyer un courriel grâce à mailto
+    et éventuellement rajouter des informations -->
+    <p>Contactez nous <a href="mailto:monaddresse@courriel.com?subject=Demande de renseignement">à notre adresse courriel</a></p>
+
+    <!-- 3.5 lien nous permettant de télécharger un fichier -->
+    <p>Téléchagez <a href="ressources/planning.pdf.zip">le planning de la formation</a></p>
 </body>
 </html>
