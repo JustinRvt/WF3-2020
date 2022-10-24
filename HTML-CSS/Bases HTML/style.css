@@ -1,0 +1,16 @@
+mark {
+    background:green;
+    color:blue; 
+}
+
+.red {
+    color:red;
+}
+
+.px100 {
+    font-size: 100px;
+}
+
+.bold {
+    font-weight: bold;
+}

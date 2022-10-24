@@ -4,9 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Les bases HTML</title>
 </head>
 <body>
-    Coucou le monde !
+    <!-- 1- LES COMMENTAIRES -->
+    <!-- Les commentaires, dans tous les langages, servent
+        uniquement de mémo
+    -->
+    
+
+    <!--2- ORGANISER NOTRE TEXTE -->
+
+    <!-- 2.1- Les paragraphes -->
+    <!-- Dans la plupart des cas, on écrit le texte dans des paragraphes qui sont des éléments de type bloc, donc qui reviennent à la ligne. 
+
+    <p> correspond au début du paragraphe
+    </p> correspond à sa fin
+    On appele cela, une balise jumelle.
+    -->
+
+    <p>
+        Lorem ipsum dolor sitamet consectetur   adipisicing elit. Repellendus consectetur perspiciatis, sunt omnis beatae quod iusto magni aperiam dicta nobis repudiandae, ipsa, dolorum possimus doloribus hic quos aspernatur doloremque! Exercitationem qui culpa tenetur mollitia excepturi nobis magnam dignissimos cupiditate quod. Error porro quae a. Atque repellat porro at fugit accusantium.
+    </p>
+    <!-- Par opposition aux balises jumelles, les balises orphelines ne se ferment pas. Par exemple, pour un saut de ligne, <br> suffit.
+
+    /!\ Par convention, suivie ou non, certaines personnes rajoutent un / à la fin, de cette manière : <br/>
+    -->
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus consectetur perspiciatis, sunt omnis beatae quod iusto magni aperiam dicta nobis <br>repudiandae, ipsa, dolorum possimus doloribus hic quos aspernatur doloremque! Exercitationem qui culpa tenetur mollitia excepturi nobis magnam dignissimos cupiditate quod. Error porro quae a. Atque repellat porro at fugit accusantium.
+    </p>
+
+    <!-- 2.2- Les titres -->
+    <!-- Lorsque le contenu de la page va se développer, il va être indispensable pour les utilisateur-rices de se repérer sur notre site. 
+    
+        La taille ne compte pas, même si elle est présente par défaut. C'est l'importance du titre qui est définie ici. H1 est la seule balise unique sur une page. Elle résume l'essence du contenu. Les autres balises, jusqu'à H6, ne sont que des sous-...-sous-titres.
+
+        /!\ Il ne peut pas y avoir de H3 avant H2 ! (ou h5 avant H3)
+    -->
+    <h1 class="red">Mon super titre</h1>
+    <h2>Mon sous-titre principal</h2>
+    <h3>Un titre un peu moins important</h3>
+    
+    
+    <!-- 2.3- La mise en valeur du texte -->
+
+        <!-- Je peux utiliser la balise <strong></strong> qui mettra par défaut mon texte en gras, cependant, cela indique surtout au navigateur et moteurs de recherche, que cet élément est important pour la compréhension de notre page. la balise <b></b> quant à elle, ne sert qu'à mettre en gras sans notion d'importance-->
+
+        <!-- Je peux aussi marquer le texte afin de faire ressortir visuellement une partie grâce à la balise <mark></mark> -->
+    <p>
+        <strong>Je suis important</strong> dolor, <b>Je suis juste en gras sans être important </b>sit amet 
+        <span class="bold">Je suis aussi en gras, mais en passant par CSS</span> consectetur adipisicing elit. Ut sint magni perspiciatis eaque, eveniet, repellendus quidem, similique aspernatur <mark>Mon texte marqué est ici !</mark> labore ea deleniti quae facilis. Itaque exercitationem provident, vitae, eum numquam quasi dignissimos ducimus commodi consequatur autem dolores a repudiandae, distinctio unde!
+    </p>
+
+    <!-- 2.4- Les listes -->
+    <!-- Nous avons 2 types de listes différentes :
+    Les listes non-ordonnées et les listes ordonnées -->
+    <p>Je suis une liste non-ordonnée</p>
+    <ul>
+        <!-- à l'intérieur, l'on y trouve des puces -->
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <p>Je suis une liste ordonnée</p>
+    <ol>
+        <!-- à l'intérieur, l'on y trouve des puces -->
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
 </body>
 </html>
