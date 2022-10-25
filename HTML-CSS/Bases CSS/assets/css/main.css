@@ -1,4 +1,16 @@
 /* Mon fichier CSS */
+/* Font -face */
+@font-face {
+    font-family: 'LEMON MILK';
+    src: url('../fonts/LEMONMILK-Medium.woff2') format('woff2'),
+        url('../fonts/') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
 /* On sélectionne toutes les balises sémantiques du même type */
 /* en l'occurence, le H1 de la page + tous les B seront rouges grâce à la virgule */
 h1, b {
@@ -11,6 +23,7 @@ p {
 /* On sélectionne TOUS les éléments qui ont la classe bienvenue */
 .bienvenue {
     color:blue;
+    font-family: "LEMON MILK" , serif;
 }
 /* on sélectionne l'unique élément avec l'ID construction */
 #construction {
@@ -39,7 +52,7 @@ p {
 }
 
 .big-font {
-    font-size:25px;
+    font-size:25.5px;
 }
 
 /* Continuons avec les sélecteurs avancés */
@@ -80,4 +93,64 @@ p[title] {
 
 p[title="Moi aussi !"] {
     color:darkslateblue;
+}
+
+/* LA TAILLE DE POLICE */
+
+/*  On a les valeurs absolues exprimées en pixel, centimètres et en millimètres. On ne les utilise que si c'est strictemenet nécessaire. */
+
+/* On a les valeurs relatives exprimées en % en em, rem, vw et vh
+(on a aussi xx-small, x-small, small, medium, large, x-large et xx-large mais nous n'avons que 7 tailles de dispo)
+
+Une des valeurs les plus utilisées est em
+
+Si font-size:1em; alors le texte a une taille normale
+Pour augmenter sa taille de 30% on passe 1.3em à font-size
+Pareil pour réduire, 0.7em;
+
+/!\ On écrit les décimales avec un point et non une virgule !
+
+la valeur s'exprime toujours en fonction de son parent !
+si la taille de police du parent est de 1.5em; et que mon enfant a une taille de police de 1em; alors il prendra les caractéristiques du parent.
+
+A l'inverse, si l'on utilise rem; alors la valeur est calculée par rapport à la racine (root)
+*/
+
+.diff-em-rem {
+    font-size:2.5em;
+}
+
+.diff-em-rem ul:first-of-type li:first-of-type {
+    font-size:0.5em; 
+}
+
+.diff-em-rem ul:first-of-type li:nth-child(2) {
+    font-size: 1em;
+}
+
+.diff-em-rem ul:first-of-type li:last-of-type {
+    font-size:1.5em;
+}
+
+.diff-em-rem ul:last-of-type li:first-of-type {
+    font-size:0.5rem; 
+}
+
+.diff-em-rem ul:last-of-type li:nth-child(2) {
+    font-size: 1rem;
+}
+
+.diff-em-rem ul:last-of-type li:last-of-type {
+    font-size:1.5rem;
+}
+
+
+.arial-font {
+    /* Pour changer les  */
+    font-family: 'Freehand', cursive;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+
 }
