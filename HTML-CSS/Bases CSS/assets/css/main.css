@@ -1,0 +1,83 @@
+/* Mon fichier CSS */
+/* On sélectionne toutes les balises sémantiques du même type */
+/* en l'occurence, le H1 de la page + tous les B seront rouges grâce à la virgule */
+h1, b {
+    color:red;
+}
+
+p {
+    color:violet;
+}
+/* On sélectionne TOUS les éléments qui ont la classe bienvenue */
+.bienvenue {
+    color:blue;
+}
+/* on sélectionne l'unique élément avec l'ID construction */
+#construction {
+    color:coral;
+    font-weight: normal; 
+}
+/*  on modifie la taille de notre image en indiquant soit la largeur (width) soit la hauteur (height) */
+#logo {
+    width:200px ;
+}
+
+/* On va créer notre premier helper ! */
+
+/* Si je sais que je vais réutiliser plusieurs fois la même propriété sur plusieurs éléments, alors je crée une classe pour écrire moins de code ! */
+
+/* Petit point sur les conventions de nommage :
+    textCenter : Camel case
+    text-center : Kebab case
+    text_center : Snake case
+    TEXT_CENTER : Upper case
+
+    Il en existe d'autres, mais moins utilisés/
+*/
+.text-center {
+    text-align: center;
+}
+
+.big-font {
+    font-size:25px;
+}
+
+/* Continuons avec les sélecteurs avancés */
+
+/* le sélecteur universel ! */
+
+* {
+    /* Je sélectionne tous les élements de la page */
+}
+
+/* Je sélectionne toutes les balises strong dans le parent qui a la classe container */
+
+.container strong {
+    color:aquamarine;
+}
+
+/* Je sélectionne toutes les balises span dans le parent qui a la classe container */
+
+.container span {
+    text-decoration: underline;
+}
+
+/* Je sélectionne la première balise <p> qui suit <h1> */
+
+h1 + p {
+    color:green;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Je sélectionne une balise qui possède un attribut */
+
+p[title] {
+    color:cornflowerblue;
+}
+
+/* Pareil, mais en ciblant sa valeur, son contenu */
+
+p[title="Moi aussi !"] {
+    color:darkslateblue;
+}

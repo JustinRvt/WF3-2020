@@ -90,6 +90,7 @@
     </p>
     <!-- Que se passe-t-il si jamais la page que je veux afficher se trouve dans un dossier séparé ?
     Il faudra utiliser les chemins relatifs ! Voire blog/accueil.html pour comprendre comment remonter (../monfichier.html)-->
+
      <!-- L'attribut title, permet d'afficher une infobulle -->
     <p>Envie de connaître toutes nos activités ? <a href="blog/accueil.html" title="Vous ne le regrettez pas !">Rejoignez le club lecture sur notre blog</a></p>
     <!-- 3.3 Lien vers un endroit spécifique d'une même page -->
@@ -102,5 +103,43 @@
 
     <!-- 3.5 lien nous permettant de télécharger un fichier -->
     <p>Téléchagez <a href="ressources/planning.pdf.zip">le planning de la formation</a></p>
+
+    <!-- 4 LES IMAGES -->
+
+    <!-- Sans utiliser les nouveaux formats webp et avif (25% plus compacts que le png), une règle pourrait être :
+    On utilise une photo => Jpeg
+    On utilise un graphique avec peu de couleur => Png 8bit
+    On utilise un graphique avec beaucoup de couleur => Png 24 bits
+    Une image animée => gif
+
+    On n'utilise JAMAIS de bmp
+
+    Attention au nommage de vos photos, pour le référencement, il est nécessaire d'utiliser un nom en minuscule, sans accents et sans espace : ma_super_image.jpg
+
+    Par convention (suivie cette fois), on remplace les espaces par des underscore _ (touche du 8)
+    -->
+
+    <!-- On se sert de la balise orpheline <img>
+    Cette dernière a 2 attributs obligatoires :
+    src="" pour indiquer la source
+    alt="" pour indiquer un texte alternatif qui servira aux personnes en situation de handicap, aux moteurs de recherche, et -éventuellement- en texte de back-up si l'image ne se charge pas correctement
+    -->
+
+    <!-- 
+        Mon image est utile est à la compréhension et au SEO/WCAG ? Alors elle passe en HTML
+
+        Elle sert à rendre mon site attrayant (ex : bannière) ? Alors elle passe en  CSS
+     -->
+     <!-- SI l'on souhaite indiquer que l'image a de l'importance, alors on l'intègre dans une <figure> -->
+         <figure>
+            <img src="ressources/miskine.jpg" width="400" alt="portrait du chien Miskine">
+            <!-- on rajoute une "caption" pour améliorer la compréhension -->
+            <figcaption>Bonjour, je suis Miskine</figcaption>
+         </figure>
+         <!-- On peut rajouter des sources externes ! -->
+         <p>
+             Voici une image chargée depuis une source externe:<br>
+             <img src="https://img.freepik.com/premium-photo/delicious-classic-italian-pizza-with-mozzarella_79762-2652.jpg?w=1480" alt="pizza 4 fromages" width="400" title="miam !">
+         </p>
 </body>
 </html>
