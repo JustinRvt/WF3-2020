@@ -345,3 +345,53 @@ outset : 3d "surélevé"
 .link-wf3-visited a:visited {
     color:red;
 }
+
+
+/* Les marges */
+
+
+.marges p {
+    width:300px;
+    height:100px;
+    border: 1px solid black;
+    text-align:justify;
+}
+
+.marges p:first-of-type {
+    padding:5em;
+}
+
+/* de la même manière que ce que l'on a vu précédemment, on aurait pu écrire :
+.marges p:first-of-type {
+    padding-top:5em;
+    padding-right:5em;
+    padding-left:5em;
+    padding-bottom:5em;
+}
+
+ou bien : 
+
+.marges p:first-of-type {
+    padding:5em 5em;
+}
+
+*/
+.marges p:nth-of-type(2) {
+    margin:5em;
+}
+
+/* pour centrer un bloc, on lui donne une width et des margins left et right en auto */
+.marges p:nth-of-type(3) {
+    margin:0 auto;
+    padding:1em;
+}
+
+.marges p:nth-of-type(4) {
+    overflow: auto;
+}
+/* nous tronquons le texte afin d'afficher ... s'il y a plus de contenu que la taille de la div le permet */
+.marges p:last-of-type {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
