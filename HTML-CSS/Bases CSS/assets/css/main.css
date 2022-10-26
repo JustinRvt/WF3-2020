@@ -90,7 +90,7 @@ p {
 /* Je sélectionne la première balise <p> qui suit <h1> */
 
 h1 + p {
-    color:green;
+    color:blue;
     font-weight: bold;
     text-decoration: underline;
 }
