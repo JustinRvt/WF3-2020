@@ -303,7 +303,45 @@ outset : 3d "surélevé"
     /* on peut aussi passer de l'ombre sur le texte ! */
     text-shadow: 2px 2px 4px black;
 }
-
+/* on rajoute une ombre à l'intérieur du bloc */
 .shadow-inset {
     box-shadow: 5px 5px 10px black inset;
+}
+
+
+/*  LES APPARENCES DYNAMIQUES */
+
+.link-wf3 a {
+    /* on supprime l'underline par défaut */
+    text-decoration: none;
+    color:crimson;
+}
+
+/* pour le :hover */
+
+.link-wf3 a:hover {   
+    color:white;
+    background:crimson;
+}
+/*  survol de la souris */
+.par-hover:hover {
+    background:black;
+    color:orange;
+}
+
+/*  au clic */
+
+.link-wf3-active a:active {
+    font-size: 40px;
+    background:darkmagenta;
+    color:yellow;
+}
+
+.link-wf3-focus a:focus {
+    background:seagreen;
+    color:white;
+}
+
+.link-wf3-visited a:visited {
+    color:red;
 }
