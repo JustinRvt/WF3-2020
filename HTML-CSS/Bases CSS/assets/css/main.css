@@ -47,9 +47,21 @@ p {
 
     Il en existe d'autres, mais moins utilisés/
 */
+
+/* HELPERS */
 .text-center {
     text-align: center;
 }
+
+.bg-blue {
+    background:blue;
+}
+
+.bg-red {
+    background:red;
+}
+
+/* FIN HELPERS */
 
 .big-font {
     font-size:25.5px;
@@ -95,9 +107,9 @@ p[title="Moi aussi !"] {
     color:darkslateblue;
 }
 
-/* LA TAILLE DE POLICE */
+/* LES TAILLES */
 
-/*  On a les valeurs absolues exprimées en pixel, centimètres et en millimètres. On ne les utilise que si c'est strictemenet nécessaire. */
+/*  On a les valeurs absolues exprimées en pixel, centimètres et en millimètres. On ne les utilise que si c'est strictement nécessaire. */
 
 /* On a les valeurs relatives exprimées en % en em, rem, vw et vh
 (on a aussi xx-small, x-small, small, medium, large, x-large et xx-large mais nous n'avons que 7 tailles de dispo)
@@ -146,11 +158,23 @@ A l'inverse, si l'on utilise rem; alors la valeur est calculée par rapport à l
 
 
 .arial-font {
-    /* Pour changer les  */
+    /* Pour changer les polices */
     font-family: 'Freehand', cursive;
 }
 
 h1 {
     font-family: 'Open Sans', sans-serif;
 
+}
+
+/* Tailles en viewport */
+
+.viewport-1 {
+    width: 20vw;
+    height:20vh;
+}
+
+.viewport-2 {
+    width:50vw;
+    height:50vh;
 }
