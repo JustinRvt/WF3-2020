@@ -1,0 +1,82 @@
+.container-1 div, .container-2 div, .container-3 div, .container-4 div {
+    width: 100px;
+    height: 100px;
+    margin: 2em;
+}
+
+/* On aggrandit la taille du container-5 afin de travailler le retour à la ligne */
+
+.container-5 div {
+    width:500px;
+    height:500px;
+    margin:2em;
+}
+
+.container-1 div:first-of-type, .container-2 div:first-of-type, .container-3 div:first-of-type, .container-4 div:first-of-type, .container-5 div:first-of-type{
+    background:blue;
+}
+
+.container-1 div:nth-child(2), .container-2 div:nth-child(2), .container-3 div:nth-child(2), .container-4 div:nth-child(2), .container-5 div:nth-child(2) {
+    border:1px solid black;
+}
+
+.container-1 div:last-of-type, .container-2 div:last-of-type, .container-3 div:last-of-type, .container-4 div:last-of-type, .container-5 div:last-of-type {
+    background: red;
+}
+
+/* Afin de positionner mes éléments en rangée, j'utilise flexbox sur le parent des 3 div, à savoir la div=class="container-1" */
+
+
+    /* pour utiliser les propriétés de flexbox, je suis OBLIGE de déclarer display:flex; */
+.flex {
+    display:flex;
+}
+    /* équivalent à flex-direction:row; */
+
+/* la colonne */
+.container-2 {
+    flex-direction: column;
+}
+
+/* la rangée inversée */
+.container-3 {
+    flex-direction: row-reverse;
+}
+
+/* la colonne inversée  */
+.container-4 {
+    flex-direction: column-reverse;
+}
+
+
+/* Le retour à la ligne */
+
+/* Par défaut, les blocs essaient de rester sur la même ligne,
+ c'est l'équivalent de la propriété flex-wrap:nowprap; */
+
+ .container-5 {
+     flex-wrap: wrap;
+ }
+
+ /* de la même manière, on peut utiliser flex-wrap:wrap-reverse, ce qui positionnera les éléments dans le sens inverse */
+
+ /* L'ALIGNEMENT */
+
+ /* Les éléments sont organisés par défaut horizontalement ou verticalement, c'est ce que l'on va appeler l'axe principal.
+ */
+
+ /* S'aligner sur l'axe principal : 
+ Pour changer leur alignement, on va utiliser la propriété justify-content. Celle-ci peut prendre les valeurs suivantes :
+
+ flex-start : aligné au début (défaut)
+ flex-end: aligné à la fin
+ center : aligné au centre
+ space-between : les éléments sont étirés sur tout le bloc
+ space-around: les éléments sont étirés sur tout le bloc mais laissent de l'espace sur les côtés.
+ */
+
+ .container-6 img {
+     width:100vw;
+ }
+
+ /* /!\ Ceci marche aussi si les éléments sont verticaux ! */
