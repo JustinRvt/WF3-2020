@@ -1,0 +1,38 @@
+/* il existe une propriété CSS particulière aux tableaux qui nous permet de recoller les bordures entre elles, il s'agit de border-collapse qui, par défaut, prend la valeur separate. Nous allons donc utiliser l'autre, collapse */
+table {
+    border-collapse: collapse;
+}
+
+/* On cible toutes les cellules du tableau */
+td, th {
+    border: 1px solid black;
+    padding:0.5em;
+}
+
+/* Avec la propriété caption-side, je peux positionner mon titre en haut, ou en bas */
+caption {
+    caption-side: top;
+    /* Par défaut, notre caption sera au top, mais on peut aussi le mettre au bottom */
+}
+
+input {
+    margin-bottom: 2em;
+}
+
+.flex {
+    display:flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+/* on peut changer l'apparence des required et focus grâce aux pseudo-classes :required et :focus */
+
+:required {
+    border: 2px solid #0000ff; ;
+}
+
+:focus {
+    border: 2px dashed green;
+}

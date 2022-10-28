@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <title>Tableaux et formulaires</title>
+  </head>
+  <body>
+    <!-- LES TABLEAUX -->
+
+    <!-- 1 Les tableaux simples -->
+
+    <!-- La première balise à connaître est <table></table> -->
+    <p>Voici mon 1er tableau</p>
+    <table>
+      <!-- Voici 2 nouvelles balises très importantes : <tr></tr> (début et fin d'une ligne) et <td></td>, début et fin du contenu d'une cellule
+        
+            En HTML, on construit nos tableaux ligne par ligne.
+            Dans chaque ligne (tr) on trouve différentes cellules (td)
+        -->
+
+      <!-- Je rajoute un titre à mon tableau grâce à <caption></caption> -->
+      <caption>
+        Liste des apprenant-es
+      </caption>
+      <!-- On rajoute ligne d'en-tête avec des cellules en <th></th> -->
+      <tr>
+        <th>Prénom</th>
+        <th>Âge</th>
+        <th>Hobby</th>
+      </tr>
+      <tr>
+        <td>Mouloud</td>
+        <td>50 ans</td>
+        <td>Astronomie</td>
+      </tr>
+      <tr>
+        <td>Lamïa</td>
+        <td>28 ans</td>
+        <td>Sport</td>
+      </tr>
+    </table>
+
+    <!-- 2 - Les tableaux structurés -->
+
+    <!-- Il est possible de les diviser en 3 parties, en-tête, corps et pied. Il est possible aussi de fusionner certaines cellules entre elles -->
+
+    <p>Voici mon 2ème tableau</p>
+    <table>
+      <caption>
+        Liste des apprenant-es
+      </caption>
+      <!-- En tête du tableau avec la balise <thead></thead> -->
+      <thead>
+        <tr>
+          <th>Prénom</th>
+          <th>Âge</th>
+          <th>Hobby</th>
+        </tr>
+      </thead>
+      <!-- Le pied du tableau avec la balise <tfoot></tfoot> -->
+      <tfoot>
+        <tr>
+          <th>Prénom</th>
+          <th>Âge</th>
+          <th>Hobby</th>
+        </tr>
+      </tfoot>
+      <!-- le corps du tableau avec la balise <tbody></tbody> -->
+      <tbody>
+        <tr>
+          <td>Mouloud</td>
+          <td>50 ans</td>
+          <td>Astronomie</td>
+        </tr>
+        <tr>
+          <td>Lamïa</td>
+          <td>28 ans</td>
+          <td>Sport</td>
+        </tr>
+        <tr>
+          <td>Maxime</td>
+          <td>27 ans</td>
+          <td>L'espace</td>
+        </tr>
+        <tr>
+          <td>Meijuan</td>
+          <td>32 ans</td>
+          <td>Tricot</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- thead, tbody et tfoot ne sont pas obligatoires, mais fortement conseillés lorsque l'on met en place un tableau avec beaucoup d'informations -->
+  </body>
+
+  <!-- 3 - La fusion de cellules -->
+
+  <!-- il existe 2 types de fusion, la fusion de colonnes et la fusion de rangées. Pour la première, on va utiliser l'attribut colspan sur nos td, pour la seconde, l'attribut rowspan -->
+
+  <p>Fusion horizontale</p>
+
+  <table>
+    <tr>
+      <th>Titre du film</th>
+      <th>Pour enfants ?</th>
+      <th>Pour ados ?</th>
+    </tr>
+    <tr>
+      <td>Alien, le 8ème passager</td>
+      <td>Non, trop violent</td>
+      <td>Oui, carrément</td>
+    </tr>
+    <tr>
+      <td>Oui-oui à la plage</td>
+      <td>Oui, c'est fait pour eux</td>
+      <td>Non, ennuyeux</td>
+    </tr>
+    <tr>
+      <td>Cars</td>
+      <!-- il n'y a que 2 balises td car colspan="2" signifie que ma dernière cellule va prendre de la place pour deux -->
+      <td colspan="2">Pour toute la famille</td>
+    </tr>
+  </table>
+
+  <p>Fusion verticale</p>
+  <table>
+    <tr>
+      <th>Titre du film</th>
+      <td>Alien, le 8ème passager</td>
+      <td>Oui-oui à la plage</td>
+      <td>Cars</td>
+    </tr>
+    <tr>
+      <th>Pour enfants ?</th>
+      <td>Non, trop violent</td>
+      <td>OUi, c'est fait pour eux</td>
+      <!-- Je fusionne mes cellules verticalement -->
+      <td rowspan="2">Pour toute la famille</td>
+    </tr>
+    <tr>
+      <th>Pour ados ?</th>
+      <td>Oui, carrément</td>
+      <td>Non, ennuyeux</td>
+    </tr>
+  </table>
+
+  <!-- LES FORMULAIRES -->
+
+  <!-- On peut rajouter des formulaires interactifs afin de permettre aux utilisateur-rices de saisir du texte, sélectionner des options, valider le tout avec un bouton, etc. -->
+
+  <!-- C'est cependant ici qu'arrive la limite du HTML car le traitement des données est géré par d'autres languages, notamment de programmation (PHP, Node.js, ASP.net, etc.) -->
+
+  <p>Mon 1er formulaire</p>
+  <!-- Nous devons rajouter 2 attributs afin de faire fonctionner notre formulaire: 
+    - tout d'abord method qui va indiquer par quel moyen on envoie les données. Généralement, on lui passe la valeur post (que l'on préférera à get) 
+
+    -Ensuite, la method action, c'est l'adresse de la page ou du programme qui va traiter nos informations. Ce n'est jamais en html, la plupart du temps en PHP.
+-->
+  <form method="post" action="assets/programmation/process_form.php">
+    <!-- 1 - Les zones de texte basiques -->
+    <!-- il en existe 2 types : les monolignes et les multilignes -->
+    <!-- pour insérer une zone de texte dans une ligne, on utilise la balise orpheline <input/> que l'on retrouvera quasi-systématiquement, mais avec la valeur de son attribut type qui va changer -->
+    <!-- Il faut lui donner un nom grâce à name, il n'apparait pas mais est nécessaire pour être traité par le back-end -->
+    <!-- On rajoute une balise <label></label> afin d'aiguiller les utilisateur-rices -->
+    <!-- afin de lier les 2 ensemble, nous allons donner un id à notre input. Attention ! L'id sert à identifier l'élément en HTML alors que name correspond à la variable que l'on va envoyer en back -->
+    <label for="prenom">Prénom</label> :
+    <!-- le contenu de for="" doit être celui de l'id -->
+    <input
+      type="text"
+      name="prenom"
+      id="prenom"
+      placeholder="Veuillez rentrer votre prénom"
+      size="25"
+      maxlength="30"
+    />
+    <br />
+    <!-- Mot de passe -->
+    <label for="mdp">Mot de passe</label> :
+    <input type="password" name="mdp" id="mdp" />
+    <br />
+    <!-- zone de texte multilignes -->
+    <label for="message">Qu'avez-vous à dire ?</label>
+    <!-- on utilise textarea pluôt qu'un input -->
+    <textarea name="message" id="message">
+Réfléchis bien avant d'écrire n'importe quoi !</textarea
+    >
+  </form>
+
+  <!-- 2 - Les zones  de saisie enrichies  -->
+  <p>Les zones de saisie enrichies</p>
+
+  <form>
+    <!-- le courriel -->
+    <!-- Si ce champ est obligatoire, je rajoute l'attribut required -->
+    <label for="email">Votre courriel :</label>
+    <input type="email" name="email" id="email" required />
+    <br />
+    <!-- le téléphone -->
+    <label for="tel">Votre téléphone :</label>
+    <input type="tel" name="tel" id="tel" />
+    <br />
+    <!-- une adresse web -->
+    <label for="url">URL de votre site :</label>
+    <input type="url" name="url" id="url" />
+    <br />
+    <!-- des nombres -->
+    <label for="number">Nombre d'enfants</label>
+    <!-- on peut personnaliser le fonctionnement avec les attributs que voici : 
+        min : valeur minimale
+        max : valeur maximale
+        step : saute de x en x, x étant la valeur de step
+    -->
+    <input type="number" name="number" id="number" min="0" max="100" step="1" />
+    <br />
+    <!-- un curseur qui prend min, max et step aussi-->
+    <label for="range">Taille en cm :</label>
+    <input
+      type="range"
+      name="range"
+      id="range"
+      min="60"
+      max="220"
+      oninput="this.nextElementSibling.value = this.value"
+    />
+    <!-- output affiche le résultat contenu dans l'attribut oninput -->
+    <output></output>
+    <br />
+    <!-- des couleurs ! -->
+    <label for="color">Couleur des yeux :</label>
+    <input type="color" name="color" id="color" />
+    <br />
+    <!-- les dates -->
+    <!-- plusieurs formats existent:
+    date (05/11/1982)
+    time (13:12)
+    week
+    month
+    datetime (date + heure)
+    datetime-local (date + heure sans gestion du décalage horaire)
+    -->
+    <label for="date">Date d'anniversaire :</label>
+    <input type="date" name="date" id="date" />
+    <br />
+    <!-- La recherche -->
+    <label for="search">Rechercher un profil :</label>
+    <input type="search" name="search" id="search" />
+    <br />
+  </form>
+
+  <p>Les élements d'options</p>
+  <!-- Les éléments d'options -->
+  <!-- les cases que l'on coche, les zones d'options et les listes déroulantes -->
+
+  <!-- les cases à cocher : -->
+  <form>
+    <p>Cochez les films nuls :</p>
+    <!-- Si le film est vraiment nul, mais genre, vraiment vraiment, on peut pré-cocher la case avec l'attribut checked -->
+    <input
+      type="checkbox"
+      name="interstellar"
+      id="interstellar"
+      checked
+    /><label for="interstellar">Interstellar</label>
+    <br />
+    <input type="checkbox" name="prometheus" id="prometheus" /><label
+      for="prometheus"
+      >Prometheus</label
+    >
+    <br />
+    <input type="checkbox" name="bondieu" id="bondieu" /><label for="bondieu"
+      >Qu'est-ce qu'on a fait au Bon Dieu ?</label
+    >
+    <br />
+    <input type="checkbox" name="avengers" id="avengers" /><label for="avengers"
+      >Avengers</label
+    >
+    <br />
+  </form>
+  <!-- les zones d'options -->
+  <form>
+    <p>Veuillez définir votre identité de genre :</p>
+    <input type="radio" name="gender" id="male" value="male" />
+    <label for="male">Masculin</label>
+    <br />
+    <input type="radio" name="gender" id="female" value="female" />
+    <label for="female">Féminin</label>
+    <br />
+    <input type="radio" name="gender" id="nb" value="nb" />
+    <label for="nb">Non-binaire</label>
+    <br />
+  </form>
+
+  <!-- Les listes déroulantes -->
+  <form>
+    <p>
+      <label for="country">De quelle origine êtes-vous ?</label>
+      <!-- on va utiliser la balise select, pour donner une valeur par défaut, cette fois ci, nous utiliserons selected -->
+      <!-- On peut grouper nos options grâce à optgroup -->
+      <select name="country" id="country">
+        <optgroup label="Europe">
+          <option value="fr">Française</option>
+        </optgroup>
+        <optgroup label="Afrique">
+          <option value="mr" selected>Marocaine</option>
+          <option value="tg">Togoloaise</option>
+        </optgroup>
+        <optgroup label="Asie">
+          <option value="ch">Chinoise</option>
+        </optgroup>
+        <optgroup label="Amérique">
+          <option value="bl">Bolivienne</option>
+        </optgroup>
+      </select>
+    </p>
+  </form>
+  <!-- FINALISER EN ENVOYER LE FORMULAIRE -->
+  <p>Finaliser et envoyer le formulaire</p>
+  <!-- regrouper les champs avec fieldset -->
+  <form method="post" action="assets/programmation/process_form.php">
+    <!-- 1er groupe -->
+    <fieldset>
+        <!-- Pour sélectionner automatiquement un champ, on peut utiliser autofocs -->
+        <legend>Vos coordonnées :</legend>
+        <label for="nom">Nom :</label>
+        <input type="text" name="nom" id="nom" autofocus>
+        <br>
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" name="prenom" id="prenom">
+        <br>
+
+        <label for="email">Courriel : *</label>
+        <input type="email" name="email" id="email" required>
+        <br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Que préféreriez-vous ?</legend>
+
+        <input type="radio" name="wish" id="rich" value="rich">
+        <label for="rich">Devenir millionnaire</label>
+        <br>
+        <input type="radio" name="wish" id="smart" value="smart">
+        <label for="smart">Avoir 180 de QI</label>
+        <br>
+        <input type="radio" name="wish" id="champion" value="champion">
+        <label for="champion">Gagner une médaille d'or</label>
+        <br>
+        <input type="radio" name="wish" id="other" value="other">
+        <label for="other">Autre...</label>
+        <br>
+        <p>
+            <label for="precisions">Si autre, merci de préciser : </label>
+            <textarea name="precisions" id="precisions"></textarea>
+        </p>
+    </fieldset>
+    <!-- Le bouton d'envoi -->
+
+    <!-- Il existe 4 versions :
+        - type="submit" : bouton principal d'envoi, le visiteur sera conduit sur la page d'action
+        -type="reset" : pour mettre à zéro le formulaire
+        -type="image" : pareil que submit, mais avec une image
+        -type="button" : bouton générique, sans effets par défaut, géré par JS
+    -->
+    <input type="reset" value="Remise à zéro">
+    <br>
+    <input type="submit" value="Envoyer">
+    </form>
+
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</html>
