@@ -1,0 +1,147 @@
+footer {
+    margin-top:20em;
+}
+
+/* En même temps que je stylise mon document, j'introduis la notion de variables en CSS */
+
+/* on place 2 tirets avant le nom de notre variable */
+html {
+    --main-color: #2a0481;
+    --sec-color:#fc9d21;
+}
+
+.btn {
+    margin:auto;
+    background: var(--main-color);
+    color:var(--sec-color);
+    font-size:1.2em;
+    padding:0.5em;
+    width:12em;
+    text-align:center;
+    border-radius:10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor:pointer;    
+    border:1px solid var(--sec-color);
+}
+/* Pour appeler nos variables, on utilise var(--ma-variable) */
+.container1 .btn {
+    
+    /* J'applique ma transformation */
+    transform: scale(1);
+    /* On peut aussi écrire les 2 lignes suivantes de la sorte : transition: transform 1s; */
+    transition-property: transform;
+    transition-duration: 1s; /* ou 1000ms */
+}
+
+/* Au survol de la souris, je souhaite que mon élément grandisse et change de couleur */
+
+.container1 .btn:hover {
+    transform: scale(1.25);
+}
+
+
+/* Je change le texte au survol */
+
+.mon-texte:hover span {
+    display:none;
+}
+
+.mon-texte:hover:after {
+    content: "Mon texte qui a changé";
+}
+
+
+/*  validation du focus */
+.container2 form {
+    width:10em;
+    margin:auto;
+}
+
+.container2 {
+    background:#cecece;
+    min-height:5em;
+}
+
+.container2 form input {
+    border:2px solid var(--main-color);
+    border-radius:10px;
+    padding:0.5em 1em;
+    font-family: 'Open Sans', sans-serif;
+    /* pour supprimer la bordure rouge du navigateur */
+    outline:none;
+}
+
+.container2 form input:focus {
+    border:2px solid var(--sec-color);
+}
+
+/* 
+Cette technique est valide mais peut potentiellement induire les utilisateurs en erreur. Nous allons donc combiner invalid et focus avec not()
+
+.container2 form input:invalid {
+    border:2px solid crimson;
+} */
+
+.container2 form input:not(:focus):invalid {
+    border:2px solid crimson;    
+}
+
+
+/* Déclements événements pseudo-classes */
+
+
+/* les pseudoclasses les plus utilisées pour déclencher une transition sont : 
+- :hover
+- :active
+- :focus
+    background: var(--sec-color);
+    color:var(--main-color);
+    border:1px solid var(--main-color);
+- :checked
+- :not()
+- :enabled
+- :disabled 
+*/
+.container3 {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.container3 .circle {
+    width:5em;
+    height:5em;
+    margin:2em auto;
+    background:var(--sec-color);
+    border-radius: 50%;
+    /* on peut aussi mettre des transitions */
+    transform: scale(0.5);
+    transition: transform 500ms;
+}
+
+.container3 .btn:active + .circle {
+    transform: scale(1.5);
+}
+
+
+/* Transitions + propriétés multiples */
+
+.container4 .btn {
+    transform: scale(1);
+    /* On peut utiliser all pour appliquer la transition sur toutes les propriétés */
+    transition: all 500ms;
+}
+
+.container4 .btn:hover, .container5 .btn:hover {
+    transform: scale(1.5);
+    background-color:var(--sec-color);
+    color:var(--main-color);
+    border:2px solid var(--main-color);
+}
+
+.container5 {
+    margin-top:3em; 
+}
+.container5 .btn {
+    transition: transform 1s, background-color 500ms;
+    /* pour retarder l'animation  */
+    transition-delay: 0, 500ms;
+}

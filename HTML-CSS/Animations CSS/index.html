@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <title>Animations CSS</title>
+  </head>
+  <body>
+    <header>
+      <h1>Les animations CSS</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Les transitions</h2>
+        <p>
+          Il existe 2 façons d'animer en CSS, on utilise les transitions ou les
+          keyframes.
+        </p>
+        <p>
+          Les transitions sont plus faciles à manier, elles nous permettent de
+          passer d'un état à un autre. Pour cela, nous avons besoin
+          d'informations :
+        </p>
+        <ul>
+          <li>Une valeur initiale</li>
+          <li>Une valeur finale</li>
+          <li>Une durée</li>
+          <li>Un événement déclencheur</li>
+          <li>Une ou plusieurs propriétés CSS</li>
+        </ul>
+        <div class="container1">
+          <div class="btn">Bouton qui grandit</div>
+        </div>
+      </section>
+      <section>
+        <h2>Changer le texte en CSS</h2>
+        <div class="mon-texte">
+          <span>Mon texte original</span>
+        </div>
+      </section>
+      <section>
+        <h2>Validation au focus</h2>
+        <div class="container2">
+          <form>
+            <label for="email">Votre courriel</label>
+            <input type="email" name="email" id="email" />
+          </form>
+        </div>
+      </section>
+      <section>
+          <h2>Déclenchement des événements d'un élément à l'autre</h2>
+          <div class="container3">
+              <div class="btn">Cliquez moi !</div>
+              <div class="circle"></div>
+          </div>
+      </section>
+      <section>
+          <h2>
+              Transitions à propriétés multiples
+          </h2>
+          <div class="container4">
+              <div class="btn">Je grandis et je change de couleur !</div>
+          </div>
+          <div class="container5">
+              <div class="btn">Pareil, mais pas avec le même timing</div>
+          </div>
+      </section>
+    </main>
+    <footer>WF3 - 2022</footer>
+  </body>
+</html>
