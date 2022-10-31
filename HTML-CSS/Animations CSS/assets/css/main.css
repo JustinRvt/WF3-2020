@@ -1,5 +1,5 @@
-footer {
-    margin-top:20em;
+body {
+    margin-bottom:20em;
 }
 
 /* En même temps que je stylise mon document, j'introduis la notion de variables en CSS */
@@ -9,7 +9,7 @@ html {
     --main-color: #2a0481;
     --sec-color:#fc9d21;
 }
-
+/* Pour appeler nos variables, on utilise var(--ma-variable) */
 .btn {
     margin:auto;
     background: var(--main-color);
@@ -23,20 +23,21 @@ html {
     cursor:pointer;    
     border:1px solid var(--sec-color);
 }
-/* Pour appeler nos variables, on utilise var(--ma-variable) */
+
 .container1 .btn {
     
-    /* J'applique ma transformation */
+    /* J'applique ma transformation, réalité, transform:scale(1) est la taille par défaut */
     transform: scale(1);
     /* On peut aussi écrire les 2 lignes suivantes de la sorte : transition: transform 1s; */
     transition-property: transform;
     transition-duration: 1s; /* ou 1000ms */
+    
 }
 
-/* Au survol de la souris, je souhaite que mon élément grandisse et change de couleur */
+/* Au survol de la souris, je souhaite que mon élément grandisse  */
 
 .container1 .btn:hover {
-    transform: scale(1.25);
+    transform: scale(1.5);
 }
 
 
@@ -94,9 +95,6 @@ Cette technique est valide mais peut potentiellement induire les utilisateurs en
 - :hover
 - :active
 - :focus
-    background: var(--sec-color);
-    color:var(--main-color);
-    border:1px solid var(--main-color);
 - :checked
 - :not()
 - :enabled
@@ -144,4 +142,24 @@ Cette technique est valide mais peut potentiellement induire les utilisateurs en
     transition: transform 1s, background-color 500ms;
     /* pour retarder l'animation  */
     transition-delay: 0, 500ms;
+}
+
+
+/*  footer + icones */
+
+footer ul,.rating ul  {
+    display:flex;
+}
+
+footer ul li, .rating ul li {
+    list-style-type:none;
+    margin:0 2em;
+    font-size: 3em;
+}
+
+.blue {
+    color:blue;
+}
+.grey {
+    color:grey;
 }

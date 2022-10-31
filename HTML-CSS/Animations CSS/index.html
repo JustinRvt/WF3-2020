@@ -4,13 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Début CDN (content delivery network) police Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <!-- Fin CDN police Google -->
+    <!-- Début CDN Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Fin CDN Fontawesome -->
+    <!-- Début styles perso -->
     <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Fin styles perso -->
     <title>Animations CSS</title>
   </head>
   <body>
@@ -56,24 +69,50 @@
         </div>
       </section>
       <section>
-          <h2>Déclenchement des événements d'un élément à l'autre</h2>
-          <div class="container3">
-              <div class="btn">Cliquez moi !</div>
-              <div class="circle"></div>
-          </div>
+        <h2>Déclenchement des événements d'un élément à l'autre</h2>
+        <div class="container3">
+          <div class="btn">Cliquez moi !</div>
+          <div class="circle"></div>
+        </div>
       </section>
       <section>
-          <h2>
-              Transitions à propriétés multiples
-          </h2>
-          <div class="container4">
-              <div class="btn">Je grandis et je change de couleur !</div>
-          </div>
-          <div class="container5">
-              <div class="btn">Pareil, mais pas avec le même timing</div>
+        <h2>Transitions à propriétés multiples</h2>
+        <div class="container4">
+          <div class="btn">Je grandis et je change de couleur !</div>
+        </div>
+        <div class="container5">
+          <div class="btn">Pareil, mais pas avec le même timing</div>
+        </div>
+      </section>
+      <!-- Grâce à aria-labelldeby, je peux lier le titre de ma section (avec son ID) à ma section. Ainsi, les logiciels d'aide à la lecture permettront de directement pointer sur la section qui les intéresse directement à l'ouverture du document -->
+      <section aria-labelledby="icones-access">
+          <h2 id="icones-access">Icones et accessibilité</h2>
+          <!-- aria-label indique à l'utilisateur qui utilise un logiciel d'aide à la lecture que le contenu de la div représente une note de 4 étoiles sur 5 -->
+          <div class="rating" aria-label="Note 4 étoiles sur 5">
+              <!-- Je cache le contenu (illisible pour les logiciels) grâce à aria-hidden avec la valeur true -->
+              <ul aria-hidden="true">
+                <li><i class="fa-solid fa-star blue"></i></li>
+                <li><i class="fa-solid fa-star blue "></i></li>
+                <li><i class="fa-solid fa-star blue"></i></li>
+                <li><i class="fa-solid fa-star blue"></i></li>
+                <li><i class="fa-solid fa-star grey"></i></li>
+              </ul>
           </div>
       </section>
     </main>
-    <footer>WF3 - 2022</footer>
+    <footer>
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/masuperpage" aria-label="Devenez fan sur Facebook !">
+            <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.intagram.com/monsuperprofil" aria-label="Suivez nous sur Instagram !">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
