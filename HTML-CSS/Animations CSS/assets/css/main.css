@@ -2,6 +2,30 @@ body {
     margin-bottom:20em;
 }
 
+h1 {
+    color:red;
+}
+/*exemple d'application de dégradé à l'icone FA d'Instagram */
+.fa-instagram {
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Si décalage entre Chrome et Firefox, on utilise 
+@-moz-document url-prefix() {...}
+ */
+@-moz-document url-prefix() {
+    h1 {
+        /* sur Firefox, mon titre principal apparaîtra en vert et non en rouge comme stipulé ligne 6 */
+        color:green;
+    }
+}
+
+
+
+
 /* En même temps que je stylise mon document, j'introduis la notion de variables en CSS */
 
 /* on place 2 tirets avant le nom de notre variable */
@@ -20,13 +44,14 @@ html {
     text-align:center;
     border-radius:10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* pour changer la forme du pointeur de la souris */
     cursor:pointer;    
     border:1px solid var(--sec-color);
 }
 
 .container1 .btn {
     
-    /* J'applique ma transformation, réalité, transform:scale(1) est la taille par défaut */
+    /* J'applique ma transformation, en réalité, transform:scale(1) est la taille par défaut */
     transform: scale(1);
     /* On peut aussi écrire les 2 lignes suivantes de la sorte : transition: transform 1s; */
     transition-property: transform;
@@ -42,7 +67,10 @@ html {
 
 
 /* Je change le texte au survol */
-
+.mon-texte {
+    width:200px;
+    margin:auto;
+}
 .mon-texte:hover span {
     display:none;
 }
@@ -73,7 +101,7 @@ html {
 }
 
 .container2 form input:focus {
-    border:2px solid var(--sec-color);
+    border:2px solid green;
 }
 
 /* 
@@ -100,7 +128,7 @@ Cette technique est valide mais peut potentiellement induire les utilisateurs en
 - :enabled
 - :disabled 
 */
-.container3 {
+.container3, .container6 {
     display: flex;
     flex-direction: column-reverse;
 }
@@ -141,9 +169,35 @@ Cette technique est valide mais peut potentiellement induire les utilisateurs en
 .container5 .btn {
     transition: transform 1s, background-color 500ms;
     /* pour retarder l'animation  */
-    transition-delay: 0, 500ms;
+    transition-delay: 1s, 500ms;
 }
 
+
+/* point d'ancrage */
+
+.progress {
+    width: 500px;
+    height:30px;
+    border: 1px solid var(--main-color);
+    margin:2em auto;
+    padding:2px;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    background:var(--sec-color);
+    height:5px;
+    border-radius: 30px;
+    /* on met scaleX(0) pour faire disparaître notre bg */
+    transform: scaleX(0);
+    transition:2s cubic-bezier(.72,.91,.37,-0.44);
+}
+
+.container6 .btn:active + .progress > .progress-bar {
+    transform:scaleX(1);
+    transition: transform 2s;
+    transform-origin: 0 50%;
+}
 
 /*  footer + icones */
 

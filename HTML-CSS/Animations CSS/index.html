@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Normalize (reset CSS) -->
+    <link rel="stylesheet" href="assets/css/normalize.min.css">
     <!-- Début CDN (content delivery network) police Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,6 +33,12 @@
       <h1>Les animations CSS</h1>
     </header>
     <main>
+        <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fa-brands fa-facebook"></i></span>List icons can</li>
+            <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>be used to</li>
+            <li><span class="fa-li"><i class="fa-solid fa-spinner fa-pulse"></i></span>replace bullets</li>
+            <li><span class="fa-li"><i class="fa-regular fa-square"></i></span>in lists</li>
+          </ul>
       <section>
         <h2>Les transitions</h2>
         <p>
@@ -84,6 +92,17 @@
           <div class="btn">Pareil, mais pas avec le même timing</div>
         </div>
       </section>
+      <section>
+          <h2>Le point d'ancrage</h2>
+          <div class="container6">
+              <div class="btn">Chargement</div>
+              <!-- On crée une barre de progression, d'abord son conteneur -->
+              <div class="progress">
+                  <!-- puis la barre en elle-même -->
+                  <div class="progress-bar"></div>
+              </div>
+          </div>
+      </section>
       <!-- Grâce à aria-labelldeby, je peux lier le titre de ma section (avec son ID) à ma section. Ainsi, les logiciels d'aide à la lecture permettront de directement pointer sur la section qui les intéresse directement à l'ouverture du document -->
       <section aria-labelledby="icones-access">
           <h2 id="icones-access">Icones et accessibilité</h2>
@@ -92,7 +111,7 @@
               <!-- Je cache le contenu (illisible pour les logiciels) grâce à aria-hidden avec la valeur true -->
               <ul aria-hidden="true">
                 <li><i class="fa-solid fa-star blue"></i></li>
-                <li><i class="fa-solid fa-star blue "></i></li>
+                <li><i class="fa-solid fa-star blue"></i></li>
                 <li><i class="fa-solid fa-star blue"></i></li>
                 <li><i class="fa-solid fa-star blue"></i></li>
                 <li><i class="fa-solid fa-star grey"></i></li>
