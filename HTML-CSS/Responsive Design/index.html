@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- 1ère méthode, on définit nos tailles d'écran dans le head du fichier HTML grâce à l'attribut media -->
+    <link rel="stylesheet" 
+          media="screen and (max-width: 768px)"
+          href="assets/css/mobile.css">
+    <title>Responsive Design</title>
+</head>
+<body>
+    <h1>Responsive Design</h1>
+    <h2>Les règles disponibles :</h2>
+    <ul>
+        <li>
+            media :<br>
+                - screen (l'écran de base)<br>
+                - print (impression)<br>
+                - tv (télévision)<br>
+                - projection (projecteur)<br>
+                - all (tous les types d'écrans)
+        </li>
+        <li>
+            width : largeur de la fenêtre
+        </li>
+        <li>
+            height: hauteur de la fenêtre
+        </li>
+        <li>
+            orientation : paysage ou portrait
+        </li>
+        <li>
+            device-width : largeur de l'appareil
+        </li>
+        <li>
+            device-height : hauteur de l'appareil
+        </li>
+    </ul>
+    <p>On peut rajouter des min- ou des max- devant ces règles.</p>
+    <p>min-width signifie largeur minimale tandis que max-width signifie largeur maximale.</p>
+    <br>
+    <p>On peut combiner toutes ces règles avec :</p>
+    <ul>
+        <li>and (et)</li>
+        <li>not (non)</li>
+        <li>only (seulement)</li>
+    </ul>
+    <h2>Exemple concret</h2>
+    <p>
+        <a href="exemple.html">Lien vers l'exemple</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <title>Exemple responsive</title>
+  </head>
+  <body>
+    <header>
+      <h1>Exemple responsive</h1>
+    </header>
+
+    <main>
+      <section id="rando" class="flex justify-center">
+        <section>
+            <h2>Les randonnées en France</h2>       
+          <div class="flex column">
+            <!-- 1ère rangée -->
+          <div class="flex space-around">
+            <article>
+                <img src="https://img.freepik.com/free-photo/river-surrounded-by-forests-cloudy-sky-thuringia-germany_181624-30863.jpg?w=1380&t=st=1667900952~exp=1667901552~hmac=0d9c305ab157a99b5dbb976ae0c38d37ccf273cae24b425cdebd8b7e8054296b" alt="Rivière entourée de forêts avec un ciel ombragé">
+                <h3>Dune du Pilat</h3>
+            </article>
+            <article>
+                <img src="https://img.freepik.com/free-photo/beautiful-shot-grassy-hills-covered-trees-near-mountains-dolomites-italy_181624-24400.jpg?w=1380&t=st=1667901002~exp=1667901602~hmac=faa136174cf2d13837b291059dafbe1d3d6a90a4c22b4d3bab9be32684243af1" alt="Collines au pied des montagnes">
+                <h3>Massif du Vercors</h3>
+            </article>
+            <article>
+                <img src="https://img.freepik.com/free-photo/beautiful-scenery-pathway-forest-with-trees-covered-with-frost_181624-42376.jpg?w=1380&t=st=1667901088~exp=1667901688~hmac=e53dc8b5d6b0063900a9a8cf838b5e87dc16901dbd7964c83c8eb2de7051b9a6" alt="Passage dans les sous-bois">
+                <h3>Forêt de Brocéliandre</h3>
+            </article>
+          </div>
+          <!-- 2nde rangée -->
+          <div class="flex space-around">
+            <article>
+                <img src="https://img.freepik.com/free-photo/wooden-fence-mountains_661209-57.jpg?w=1380&t=st=1667901186~exp=1667901786~hmac=46f8a87692f9456c5c25a589fbb30d1d131bbaa977c50288278ac37cb30d9fb9" alt="Plaine du massif central">
+                <h3>Massif central</h3>
+            </article>
+            <article>
+                <img src="https://img.freepik.com/free-photo/wonderful-sunrise-august-morning-durdle-door-dorset-england_181624-11350.jpg?w=1380&t=st=1667901221~exp=1667901821~hmac=e3d7035768cf28f2a35c8ba21b5a6a4c9dde5ad06a56af388fb435513f8bbcdc" alt="Vue sur les falaises d'Etretat">
+                <h3>Falaises d'Etretat</h3>
+            </article>
+            <article>
+                <img src="https://img.freepik.com/free-photo/mesmerizing-scenery-green-mountains-with-cloudy-sky-surface_181624-27189.jpg?w=1380&t=st=1667901261~exp=1667901861~hmac=8f79c09e80cf0c2b59c222793871018170a27c21e4d39d9e3ca103edccd35efa" alt="Vue panoramique sur la montagne">
+                <h3>Les Alpes</h3>
+            </article>
+          </div>
+          </div>
+        </section>
+        <aside class="flex column">
+            <h2>Les plus populaires</h2>
+            <div>
+                <article>
+                    <img src="https://img.freepik.com/free-photo/beautiful-field-with-dry-greenery-lighthouse-beacon-tower-distance-blue-sky_181624-2324.jpg?w=1380&t=st=1667901298~exp=1667901898~hmac=7087b895fa1834de4a53791366541f443bbdf0e2809a75d985b7264821517ad3" alt="Champ avec un phare">
+                    <h3>La Vendée</h3>
+                  </article>
+                  <article>
+                    <img src="https://img.freepik.com/free-photo/breathtaking-shot-beautiful-stones-turquoise-water-lake-hills-background_181624-12847.jpg?w=1380&t=st=1667901424~exp=1667902024~hmac=7259b138c30a19fd8a08d33406ed2dca97ad5410b35f409ff9c032da6dcb210c" alt="Vue sur un lac turquoise et les montagnes">
+                    <h3>Les pyrénées</h3>
+                  </article>
+                  <article>
+                    <img src="https://img.freepik.com/free-photo/view-alpine-landscape-near-gunzesried-bavaria-germany-captured-during-daytime_181624-49513.jpg?w=1380&t=st=1667901489~exp=1667902089~hmac=7132b2c54f46cc78b85d4ce50aa536d2b7dcb8e06f4fe36f98193ee8e1f1caa1" alt="Vue sur un paysage avec un arbre">
+                    <h3>La Beauce</h3>
+                  </article>
+            </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <!-- un peu de javascript afin d'afficher l'année en cours -->
+      &copy;
+      <span id="copyright">
+        <script>
+          document
+            .getElementById("copyright")
+            .appendChild(document.createTextNode(new Date().getFullYear()));
+        </script>
+      </span>
+      - WF3
+    </footer>
+  </body>
+</html>

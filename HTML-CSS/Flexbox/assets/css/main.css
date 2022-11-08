@@ -31,7 +31,12 @@
 .flex {
     display:flex;
 }
+
     /* équivalent à flex-direction:row; */
+
+.column {
+    flex-direction: column;
+}
 
 /* la colonne */
 .container-2 {

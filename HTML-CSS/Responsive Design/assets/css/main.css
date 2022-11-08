@@ -1,0 +1,20 @@
+/*  Main design */
+
+body, a {
+    background:black;
+    color:white;
+}
+
+/*  La 2nde méthode consiste à déclarer la règle dans le même fichier css que d'habitude, c'est ce que vous verrez le plus souvent.  */
+@media screen and (min-width:768px) and (max-width:1200px) {
+    body {
+        background:blue;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    body {
+        background:yellow;
+    }
+}
+
