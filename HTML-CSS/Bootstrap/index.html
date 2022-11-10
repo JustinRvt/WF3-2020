@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- On place le fichier CSS /!\ AVANT /!\ notre propre fichier de style afin que nous puissions surcharger les classes de Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- Mes styles perso -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <title>Bootstrap</title>
+  </head>
+  <body>
+    <header>
+      <h1>Bootstrap</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>Les breakpoints</h2>
+        <p>Ou "points d'arrêt"</p>
+
+        <table class="table table-dark table-striped table-hover">
+          <tr>
+            <th>Taille</th>
+            <th>Breakpoint</th>
+            <th>Classe</th>
+            <th>Taille d'écran</th>
+          </tr>
+          <tr>
+            <td>Très petite</td>
+            <td>< 576px</td>
+            <td>aucun</td>
+            <td>Petit smartphone</td>
+          </tr>
+          <tr>
+            <td>Petite</td>
+            <td>>= 576px</td>
+            <td>-sm</td>
+            <td>Smartphone</td>
+          </tr>
+          <tr>
+            <td>Moyenne</td>
+            <td>>= 768px</td>
+            <td>-md</td>
+            <td>Tablette</td>
+          </tr>
+          <tr>
+            <td>Grande</td>
+            <td>>= 992px</td>
+            <td>-lg</td>
+            <td>Grande tablette / petit PC</td>
+          </tr>
+          <tr>
+            <td>Très grande</td>
+            <td>>= 1200px</td>
+            <td>-xl</td>
+            <td>Écran 15"</td>
+          </tr>
+          <tr>
+            <td>Très très grande</td>
+            <td>>= 1400px</td>
+            <td>-xxl</td>
+            <td>Écran > 15"</td>
+          </tr>
+        </table>
+        <!-- Je centre ma div grâce à text-center -->
+        <div class="text-center">
+          <!-- J'insère une image responsive grâce à la classe img-fluid -->
+          <img
+            src="assets/img/resolution.jpg"
+            alt="Différentes résolutions d'écran en responsive"
+            class="img-fluid"
+          />
+        </div>
+      </section>
+
+      <section class="exemple-container">
+        <h2>Les containers</h2>
+        <p>Les containers sont les éléments de base de Bootsrap, ils enveloppent le contenu et sont nécessaires pour la mise en page</p>
+        <div class="container">
+            Mon contenu avec class="container", centré et avec des marges
+        </div>
+        <div class="container-fluid">
+            Mon contenu avec class="container-fluid, non-centré et sans marge"
+        </div>
+
+      </section>
+
+      <section class="grilles">
+        <h2>Les grilles</h2>
+        <p>Bootstrap possède un système de grilles. Les grilles sont basées sur une succession de lignes (row) et de colonnes (col) qui vont nous aider à mettre en page nos documents.</p>
+        <p>Une row permet d'intégrer une ou plusieurs col (jusqu'à 12).</p>
+        <div class="text-center">
+            <img src="assets/img/grille.jpg" alt="système de grilles" class="img-fluid">
+        </div>
+        <!-- exemple -->
+        <h3>2 div avec class="col"</h3>
+        <p>Chacune des div prend 12/2 = 6 colonnes</p>
+        <div class="container">
+            <div class="row">
+                <div class="col bg-primary">1ère colonne</div>
+                <div class="col bg-success">2nde colonne</div>
+            </div>
+        </div>
+        <h3>2 div avec class="col-X"</h3>
+        <p>X est un nombre donné, sachant que le total des deux ne peut dépasser 12 sinon il y a retour à la ligne</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 bg-primary">1ère colonne</div>
+                <div class="col-8 bg-success">2nde colonne</div>
+            </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- On place nos scripts avant la fin de la balise body, ou éventuellement dans le <head> mais avec l'attribut /!\ DEFER /!\ (sans valeur) -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
