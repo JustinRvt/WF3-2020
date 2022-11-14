@@ -15,7 +15,7 @@
       <h1>Bootstrap</h1>
     </header>
 
-    <main>
+    <main class="container text-center">
       <section>
         <h2>Les breakpoints</h2>
         <p>Ou "points d'arrêt"</p>
@@ -77,44 +77,163 @@
 
       <section class="exemple-container">
         <h2>Les containers</h2>
-        <p>Les containers sont les éléments de base de Bootsrap, ils enveloppent le contenu et sont nécessaires pour la mise en page</p>
+        <p>
+          Les containers sont les éléments de base de Bootsrap, ils enveloppent
+          le contenu et sont nécessaires pour la mise en page
+        </p>
         <div class="container">
-            Mon contenu avec class="container", centré et avec des marges
+          Mon contenu avec class="container", centré et avec des marges
         </div>
         <div class="container-fluid">
-            Mon contenu avec class="container-fluid, non-centré et sans marge"
+          Mon contenu avec class="container-fluid, non-centré et sans marge"
         </div>
-
       </section>
 
       <section class="grilles">
         <h2>Les grilles</h2>
-        <p>Bootstrap possède un système de grilles. Les grilles sont basées sur une succession de lignes (row) et de colonnes (col) qui vont nous aider à mettre en page nos documents.</p>
+        <p>
+          Bootstrap possède un système de grilles. Les grilles sont basées sur
+          une succession de lignes (row) et de colonnes (col) qui vont nous
+          aider à mettre en page nos documents.
+        </p>
         <p>Une row permet d'intégrer une ou plusieurs col (jusqu'à 12).</p>
         <div class="text-center">
-            <img src="assets/img/grille.jpg" alt="système de grilles" class="img-fluid">
+          <img
+            src="assets/img/grille.jpg"
+            alt="système de grilles"
+            class="img-fluid"
+          />
         </div>
         <!-- exemple -->
         <h3>2 div avec class="col"</h3>
         <p>Chacune des div prend 12/2 = 6 colonnes</p>
         <div class="container">
-            <div class="row">
-                <div class="col bg-primary">1ère colonne</div>
-                <div class="col bg-success">2nde colonne</div>
-            </div>
+          <div class="row">
+            <div class="col bg-primary">1ère colonne</div>
+            <div class="col bg-success">2nde colonne</div>
+          </div>
         </div>
         <h3>2 div avec class="col-X"</h3>
-        <p>X est un nombre donné, sachant que le total des deux ne peut dépasser 12 sinon il y a retour à la ligne</p>
+        <p>
+          X est un nombre donné, sachant que le total des deux ne peut dépasser
+          12 sinon il y a retour à la ligne
+        </p>
         <div class="container">
-            <div class="row">
-                <div class="col-4 bg-primary">1ère colonne</div>
-                <div class="col-8 bg-success">2nde colonne</div>
-            </div>
+          <div class="row">
+            <div class="col-4 bg-primary">1ère colonne</div>
+            <div class="col-8 bg-success">2nde colonne</div>
+          </div>
         </div>
+        <h3>Les modificateurs de classe</h3>
+        <p>
+          Les modificateurs de classe se définissent au même niveau que nos
+          blocs (div en l'occurence) dès que l'on franchit un breakpoint.
+        </p>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-7 col-lg-9 bg-primary">
+              1ère colonne
+            </div>
+            <div class="col-sm-12 col-md-5 col-lg-3 bg-success">
+              2nde colonne
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-4 bg-primary">colonne 1</div>
+            <div class="col-sm-12 col-md-4 bg-success">colonne 2</div>
+            <div class="col-sm-12 col-md-4 bg-danger">colonne 3</div>
+          </div>
+        </div>
+        <h3>Les gouttières (ou gutters)</h3>
+        <p class="lead">
+          Pour gérer les espaces, on utilise la classe .g-{1-5} (ou .g-1, .g-2
+          [...], .g-5 sachant que .g est le générique (col+row) et .gx-{1-5}
+          concerne l'espace entre les colonnes et .gy-{1-5} l'espace entre les
+          rangées.
+        </p>
+        <div class="px-0 overflow-hidden p-5">
+          <div class="row g-5">
+            <div class="col-sm-12 col-md-6 col-lg-3">
+              <div class="p-3 border bg-primary">colonne 1</div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+              <div class="p-3 border bg-success">colonne 2</div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+              <div class="p-3 border bg-danger">colonne 3</div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+              <div class="p-3 border bg-warning">colonne 4</div>
+            </div>
+          </div>
+        </div>
+        <h3>Les offset</h3>
+        <p class="fw-bold">
+          Parfois, on a besoin de laisser un ou des espaces entre les colonnes,
+          pour cela, on utilise les offset
+        </p>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 bg-primary">.col-md-4</div>
+            <div class="col-md-4 offset-md-4 bg-success">
+              .col-md-4 .offset-md-4
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 offset-md-3 bg-primary">.col-md-3 .offset-md-3</div>
+            <div class="col-md-3 offset-md-3 bg-success">.col-md-3 .offset-md-3</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 offset-md-3 bg-danger">.col-md-6 .offset-md-3</div>
+        </div>
+      </section>
+      <section>
+        <h2>Exemple carousel</h2>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="https://via.placeholder.com/150x50.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>First slide label</h5>
+                  <p>Some representative placeholder content for the first slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://via.placeholder.com/150x50.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Second slide label</h5>
+                  <p>Some representative placeholder content for the second slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://via.placeholder.com/150x50.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Third slide label</h5>
+                  <p>Some representative placeholder content for the third slide.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
       </section>
     </main>
 
     <!-- On place nos scripts avant la fin de la balise body, ou éventuellement dans le <head> mais avec l'attribut /!\ DEFER /!\ (sans valeur) -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
