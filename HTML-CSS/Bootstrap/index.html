@@ -153,7 +153,7 @@
           concerne l'espace entre les colonnes et .gy-{1-5} l'espace entre les
           rangées.
         </p>
-        <div class="px-0 overflow-hidden p-5">
+        <div class="container px-0 overflow-hidden p-5">
           <div class="row g-5">
             <div class="col-sm-12 col-md-6 col-lg-3">
               <div class="p-3 border bg-primary">colonne 1</div>
@@ -165,7 +165,16 @@
               <div class="p-3 border bg-danger">colonne 3</div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-3">
-              <div class="p-3 border bg-warning">colonne 4</div>
+              <div class="p-3 border bg-warning">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 bg-primary">.col-md-4</div>
+                        <div class="col-md-5 offset-md-2 bg-success">
+                        .col-md-4 .offset-md-4
+                        </div>
+                    </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
