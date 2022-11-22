@@ -29,7 +29,8 @@ let exempleString2 = 'J\'existe aussi';
 /*
 Pour savoir à quoi sert une variable, il s'agit de la nommer en étant le plus précis possible. On attribut donc un nom à cette dernière.
 
-Voici quelques règles de base :*
+Voici quelques règles de base :
+- ne commencez jamais par un chiffre
 - utilisez une langue et une seule ! (pas de mélange franglais)
 - utilisez des noms suffisamment descriptifs dans TOUT votre code, par exemple :
 socksQuantityInStock ou quantiteChaussettesRestantes
@@ -49,7 +50,7 @@ On appelle cela "déclarer une variable"
 Pour cela, nous allons nous servir du mot-clef "let"
 */
 
-// Je déclare un nombre de chats, en l'occurence 7
+// Je déclare un nombre de chats, en l'occurence 6
 let numberOfCats = 6;
 console.log("Les apprennants possèdent " + numberOfCats + " chats.");
 // Je déclare un nombre de chiens
@@ -142,7 +143,7 @@ Les constantes sont des variables qui ne sont pas mutables. On donne une valeur 
 const birthday = "05/11/1982";
 console.log("ma date d'anniversaire est le " + birthday + ".");
 // ce que je ne peux pas faire, c'est réassigner une valeur
-// birthday = "06/11/1982"; retourne une erreur dans la console !
+// birthday = "06/11/1982";// retourne une erreur dans la console !
 
 
 // LES TYPES PRIMITIFS
@@ -161,7 +162,7 @@ En programmation, on peut appeler les entiers "integers" et les décimaux "float
 */
 
 /*
-Gaffe à l'arithmétique et les floating-points (ou virgules flottantes).
+Méfiance à l'arithmétique et les floating-points (ou virgules flottantes).
 */
 
 let integerCalculation = 1 + 2;
@@ -169,6 +170,8 @@ console.log("mon calcul entre nombres entiers donne " + integerCalculation);
 
 let stupidCalculation = 0.1 + 0.2;
 console.log("On attend 0.3 comme réponse, mais l'on obtient " + stupidCalculation);
+
+// Pour arrondir à l'entier naturel, on peut utilise Math.round(stupidCalculation), ou bien stupidCalculation.toFixed(0). 0 étant le nombre de chiffres après la virgule, on pourrait utiliser toFixed(2) pour obtenir un résultat compréhensible par l'utilisateur, notamment en ce qui concerne les prix.
 
 /* Chaque fois que possible, on utilise des calculs entiers */
 
@@ -206,6 +209,7 @@ Depuis quelques années, on peut utiliser un nouveau format d'écriture qui simp
 */
 
 const myName = "Matin";
+// les variables s'appellent avec ${maVariable}
 const salutation = `Bienvenue sur mon site ${myName} !`;
 console.log(salutation);
 
@@ -214,3 +218,132 @@ console.log(salutation);
 
 Attention aux types de variables et -en général- préférez les constantes dès que cela est possible.
 */
+
+// DÉFINITION DES OBJETS ET DE LEURS ATTRIBUTS AVEC DES CLASSES
+
+/**
+ * Lorsque l'on pense à un objet dans le monde réel, on énumère une série de caractéristiques (ou d'attributs) qui sert de modèle pour cet objet.
+ * 
+ * En langage de programmation, on va appeler cela une "classe". On choisit nous-même le nom de la classe. Avant de plonger dans ce concept, nous allons étudier les objets.
+ */
+
+// LES OBJETS
+
+/**
+ * En Javascript, les objets sont écrits sous format JSON (JavaScript Object Notation). Ils s'expriment sous forme de paires clefs/valeurs séparées par des virgules et entourées d'accolades {}
+ */
+
+let myBook = {
+    title : "Bel Ami",
+    author : "Maupassant",
+    numberOfPages : 267,
+    isAvailable : true
+}
+
+console.log(myBook);
+
+/**
+ * Chaque clef est une chaîne (title, author, etc.) et les valeurs associées peuvent prendre n'importe quel type. Cela nous permet de regrouper les attributs d'une même "chose" (même objet) unique à un même emplacement.
+ */
+
+/**
+ * Pour accéder à nos valeurs à l'intérieur de l'objet, on utilise la notation pointée (ou "dot notation") comme par exemple :
+ */
+// DOT NOTATION
+let bookTitle = myBook.title;
+console.log(`Le titre de mon livre est ${bookTitle}.`);
+// ou : console.log(`Le titre de mon livre est ${myBook.title}.`);
+
+let bookPages = myBook.numberOfPages;
+console.log(`Ce dernier comporte ${bookPages} pages.`);
+/**
+ * Ou la notation en bracket
+ */
+// BRACKET NOTATION
+let bookAuthor = myBook["author"];
+console.log(`Cet ouvrage a été rédigé par ${bookAuthor}`);
+
+let bookAvailability = myBook["isAvailable"];
+console.log(`Ce titre est disponible, true ou false ? ${bookAvailability}`);
+
+// MANIPULATION DES CLASSES
+
+/**
+ * La construction d'un objet "à la main" peut s'avérer fastidieuse. Cela convient pour des objets simples et uniques mais il y a très souvent des objets de même type ! C'est là qu'interviennent les classes.
+ * 
+ * Une classe est un MODÈLE pour un objet dans notre code. Elle permet de constuire plusieurs objets du même type (que l'on appelle des instances) plus facilement, plus rapidement et surtout avec plus de fiabilité.
+ */
+
+// Pour écrire une classe en Javascript, on va utilise le mot-clef "Class"
+class Book {
+    // Pour cette classe, nous souhaitons reprendre les éléments de l'objet myBook, soit un titre, un auteur, un nombre de pages et une disponibilité. Nous allons donc utiliser un constructeur. Le constructeur d'une classe, c'est la fonction qui est appelée lorsque l'on crée une nouvelle instance de cette classe grâce au mot-clef "new"
+    constructor(title, author, numberOfPages, isAvailable){
+        // On va utiliser le mot-clef "this" pour attribuer le titre, l'auteur, etc. reçu à la création de l'instance.
+        this.title = title;
+        this.author = author;
+        this.numberOfPages = numberOfPages;
+        this.isAvailable = isAvailable;
+    }
+}   
+
+// On va instancier notre premier livre
+let myBook1 = new Book("Dialogue de bêtes", "Colette", 240, true);
+
+console.log(myBook1);
+
+// REGROUPONS NOS DONNÉES AVEC DES TABLEAUX ET DES OBJETS
+
+/**
+ * Imaginons que nous soyons responsables de la gestion des places d'un théâtre. AU 1er rang, il y aurait les amis / familles des comédien-nes.
+ */
+// Ceci peut fonctionner avec 2 invités, mais quid d'une rangée de 30 ?
+let firstGuestName = "Lamïa";
+let SecondGuestName ="Adam";
+
+// On va utiliser un tableau pour enregistrer une liste ordonnées d'éléments
+let guests = [];
+// une fois les invité-es désigné-es, on remplit le tableau
+guests = [
+    "Matin","Thibaut","Tristan","Meijuan","Falilou","Mouloud","Maxime","Christelle","Lamïa","Adam","Linda","Kyllian"
+];
+
+console.log(guests);
+
+let firstGuest = guests[0];
+console.log(`le premier invité est ${firstGuest}`);
+
+let thirdGuest = guests[2];
+console.log(`le troisième invité est ${thirdGuest}`);
+
+let errorGuest = guests[12];
+console.log(`l'error guest est ${errorGuest}`);
+
+// TRAVAILLONS SUR LES TABLEAUX
+
+/**
+ * En JS, les tableaux sont très puissants et très utilisés, ils ont beaucoup d'attributs et de méthodes très utiles.
+ */
+
+// Pour compter les éléments on utilise length :
+let howManyGuests = guests.length;
+console.log(`Il y a ${howManyGuests} invités en tout.`);
+
+// Pour ajouter et supprimer des éléments
+
+// pour ajouter un élément à la fin du tableau, on utilise la méthode push
+guests.push("Justin");
+console.log(guests);
+
+// pour ajouter un élément au début du tableau, on utilise la méthode unshift
+guests.unshift("Cécile");
+console.log(guests);
+
+// pour supprimer le dernier élément d'un tableau, on utilise la méthode pop
+guests.pop();
+console.log(guests);
+
+// pour supprimer le premier élément d'un tableau, on utilise la méthode shift
+guests.shift();
+console.log(guests);
+
+// pour supprimer un élément en fonction de son index, on utilise la syntaxe suivante : delete guests[4];
