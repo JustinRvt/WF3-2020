@@ -21,10 +21,7 @@ Il en existe 3 types :
 
 */
 
-// pour déclarer une valeur à un string, on utilise "" ou '', cependant, il y a une différence.
-let exempleString1 = "J'existe";
-// Si j'utilise '', je dois mettre un back-slash devant mes apostrophes
-let exempleString2 = 'J\'existe aussi';
+
 
 /*
 Pour savoir à quoi sert une variable, il s'agit de la nommer en étant le plus précis possible. On attribut donc un nom à cette dernière.
@@ -72,7 +69,7 @@ Ce n'est pas la seule manière de modifier des valeurs, on peut également utili
 
 // Pour ajouter 2 variables, on utilise +
 let totalCDs = 21;
-let totalVynils = 34;
+let totalVynils = 54;
 
 let totalMusic = totalCDs + totalVynils;
 console.log("ma sonothèque comporte " + totalMusic + " oeuvres musicales, tout format confondu. En réalité, je possède " + totalCDs + " CDs et " + totalVynils + " vynils.");
@@ -149,7 +146,7 @@ console.log("ma date d'anniversaire est le " + birthday + ".");
 // LES TYPES PRIMITIFS
 /*
 Ce sont les briques de base de chaque structure de données en Javascript.
-number, string et boolean seront toujours présents, peu importe la complexité de votre programme / application. En JS, il n'est pas utile de déclarer le type de d'une variable, il est néanmoins fondamental de bien comprendre leur importance et leur existence.
+number, string et boolean seront toujours présents, peu importe la complexité de votre programme / application. En JS, il n'est pas utile de déclarer le type d'une variable, il est néanmoins fondamental de bien comprendre leur importance et leur existence.
 */
 
 // LE TYPE NUMBER
@@ -192,8 +189,12 @@ let userIsAdmin = false;
 /*
 C'est la manière d'enregistrer du texte dans des variables. On peut enregistrer n'importe quel chaîne de caractères allant d'un seul caractère à plus de 134 millions.
 
-Elles sont encadrées par "" ou '' :
 */
+// pour déclarer une valeur à un string, on utilise "" ou '', cependant, il y a une différence.
+let exempleString1 = "J'existe";
+// Si j'utilise '', je dois mettre un back-slash devant mes apostrophes
+let exempleString2 = 'J\'existe aussi';
+
 
 let firstName = "Justin";
 let lastName ='Ravat';
@@ -218,6 +219,7 @@ console.log(salutation);
 
 Attention aux types de variables et -en général- préférez les constantes dès que cela est possible.
 */
+
 
 // DÉFINITION DES OBJETS ET DE LEURS ATTRIBUTS AVEC DES CLASSES
 
