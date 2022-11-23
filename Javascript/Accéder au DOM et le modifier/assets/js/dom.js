@@ -52,12 +52,12 @@ const selectors = document.querySelector("#myId p.myClass > a");
 // Les Recherches par éléments
 /**
  * <div id="parent">
- *      <div id="previous"></div>
+ *      <div id="precedant"></div>
  *      <div id="main">
  *          <p>Paragraphe 1</p>
  *          <p>Paragraphe 2</p>
  *      </div>
- *      <div id="next"></div>
+ *      <div id="suivant"></div>
  * </div>
  */
 // si :
@@ -69,3 +69,30 @@ const main = document.getElementById("main");
  * main.nextElementSibling : retourne la div avec l'id #next
  * main.previousElementSibling : retourne l'id #previous
  */
+
+// MODIFIONS LE DOM
+let javascript = "JavaScript";
+// innerHTML 
+let injectionHTML = document.getElementById("exInnerHTML");
+injectionHTML.innerHTML = `<b>Je suis injecté depuis ${javascript} grâce à <u>innerHTML</u></b>`;
+// textContent
+let injectionText = document.getElementById("exTextContent");
+injectionText.textContent = "<b>Pareil, mais avec <u>textContent</u></b>";
+
+
+// MODIFIONS LES CLASSES
+
+
+// Je cible la 1ère puce du bloc avec l'id exClassList
+let addClassBigFont = document.querySelector("#exClassList li:first-of-type");
+addClassBigFont.classList.add("bigFont", "bold");
+
+// Je cible la 2ème puce (li) du bloc avec l'id exClassList 
+let deleteClassBlue = document.querySelector("#exClassList li:nth-child(2)");
+// Je retire la classe .blue
+deleteClassBlue.classList.remove("blue");
+
+// Je cible la 3ème puce
+let replaceClassBlue = document.querySelector("#exClassList li:nth-child(3)");
+// je remplace le classe blue par la classe red, sous forme replace("old", "new")
+replaceClassBlue.classList.replace("blue", "red");

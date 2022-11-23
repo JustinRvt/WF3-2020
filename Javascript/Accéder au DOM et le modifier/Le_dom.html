@@ -4,57 +4,142 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/dom.css" />
     <title>Accéder au DOM et le modifier</title>
   </head>
   <body>
+    <header>
+      <h1>Le DOM</h1>
+      <p>Document Object Model</p>
+    </header>
 
-    <h1>Le DOM</h1>
-    <p>Document Object Model</p>
+    <main id="mainContent">
+      <section>
+        <h2>À quoi sert le DOM ?</h2>
+        <p>
+          Grâce une interface de programmation qui nous autorise à parcourir le
+          DOM, nous serons en mesure d'interragir avec lui. Ces interactions
+          sont :
+        </p>
+        <ul>
+          <li>
+            Interaction avec l'utilisateur : on récupère des informations en
+            écoutant les événements sur notre document. Ex: remplissage
+            formulaire, détection d'un clic, etc.
+          </li>
+          <li>
+            Afficher des données en modifiant le contenu d'un élément précis.
+          </li>
+          <li>
+            Modifier, ajouter ou supprimer des styles sur un ou plusieurs
+            éléments
+          </li>
+          <li>Créer ou supprimer des éléments</li>
+        </ul>
+        <p>
+          Pour résumer, le DOM est une réprésentation de la page HTML et il
+          permet d'accéder aux différents éléments grâce à Javascript
+        </p>
+      </section>
 
-    <h2>À quoi sert le DOM ?</h2>
-    <p>Grâce une interface de programmation qui nous autorise à parcourir le DOM, nous serons en mesure d'interragir avec lui. Ces interactions sont :</p>
-    <ul>
-        <li>Interaction avec l'utilisateur : on récupère des informations en écoutant les événements sur notre document. Ex: remplissage formulaire, détection d'un clic, etc.</li>
-        <li>Afficher des données en modifiant le contenu d'un élément précis.</li>
-        <li>Modifier, ajouter ou supprimer des styles sur un ou plusieurs éléments</li>
-        <li>Créer ou supprimer des éléments</li>
-    </ul>
-    <p>Pour résumer, le DOM est une réprésentation de la page HTML et il permet d'accéder aux différents éléments grâce à Javascript</p>
+      <section>
+        <h2>Accédons aux éléments du DOM</h2>
 
+        <h3>Le document</h3>
 
-    <h2>Accédons aux éléments du DOM</h2>
+        <p>
+          Tout part du <code>document</code>, c'est un objet auquel JS nous
+          donne accès. Il représente la page (document HTML) entière.
+        </p>
+        <p>
+          <code>document</code> contient toutes les fonctions dont nous avons
+          besoin pour rechercher les éléments.
+        </p>
 
-    <h3>Le document</h3>
+        <h4>document.getElementById("...")</h4>
+        <p>
+          Probablement la méthode la plus utilisée car elle permet de retrouver
+          un élément UNIQUE.
+        </p>
 
-    <p>Tout part du <code>document</code>, c'est un objet auquel JS nous donne accès. Il représente la page (document HTML) entière.</p>
-    <p><code>document</code> contient toutes les fonctions dont nous avons besoin pour rechercher les éléments.</p>
+        <h4>document.getElementsByClassName("...")</h4>
+        <p>
+          C'est la même méthode que précédement, à la différence que sa
+          recherche va se concentrer sur la classe des éléments
+        </p>
 
-    <h4>document.getElementById("...")</h4>
-    <p>Probablement la méthode la plus utilisée car elle permet de retrouver un élément UNIQUE.</p>
+        <h4>document.getElementsByTagName("...")</h4>
+        <p>
+          Nous recherchons tous les éléments avec un nom de balise similaire,
+          tous les liens, les boutons, etc.
+        </p>
 
-    <h4>document.getElementByClassName("...")</h4>
-    <p>C'est la même méthode que précédement, à la différence que sa recherche va se concentrer sur la classe des éléments</p>
+        <h4>document.querySelector("...")</h4>
+        <p>
+          Cette méthode est plus complexe mais elle permet de faire des
+          recherches plus poussées grâce aux sélecteurs. Par exemple :
+          <code> document.querySelector("#myId p.myClass > a") </code>
+          va rechercher dans l'id #myID les éléments de type paragraphe (p) qui
+          ont pour classe "myClass" de manière à récupérer l'enfant direct qui
+          est un lien (a).
+        </p>
 
-    <h4>document.getElementByTagName("...")</h4>
-    <p>Nous recherchons tous les éléments avec un nom de balise similaire, tous les liens, les boutons, etc.</p>
+        <h3>Les recherches depuis un élément</h3>
 
-    <h4>document.querySelector("...")</h4>
-    <p>Cette méthode est plus complexe mais elle permet de faire des recherches plus poussées grâce aux sélecteurs. Par exemple : 
-        <code>
-            document.querySelector("#myId p.myClass > a")
-        </code> 
-        va rechercher dans l'id #myID les éléments de type paragraphe (p) qui ont pour classe "myClass" de manière à récupérer l'enfant direct qui est un lien (a).
-    </p>
+        <p>
+          On peut aussi effectuer des recherches depuis les élemnts. Nous allons
+          parcourir parents et enfants
+        </p>
+        <ul>
+          <li>element.children : nous retourne la liste des enfants</li>
+          <li>element.parentElement : nous retourne la liste des parents</li>
+          <li>
+            element.nextElementSibling (et element.previousElementSibling)
+            naviguent vers l'élement suivant ou précédant au même niveau que
+            notre élément
+          </li>
+        </ul>
+      </section>
 
-    <h3>Les recherches depuis un élément</h3>
+      <section>
+        <h2>Modifions le DOM</h2>
 
-    <p>On peut aussi effectuer des recherches depuis les élemnts. Nous allons parcourir parents et enfants</p>
-    <ul>
-        <li>element.children : nous retourne la liste des enfants</li>
-        <li>element.parentElement : nous retourne la liste des parents</li>
-        <li>element.nextElementSibling (et element.previousElementSibling) naviguent vers l'élement suivant ou précédant au même niveau que notre élément</li>
-    </ul>
+        <p>
+          Nous savons maintenant accéder aux éléments du DOM, il n'y a plus qu'à
+          les modifier.
+        </p>
 
+        <h3>Modifions le contenu d'un élément</h3>
+
+        <p>
+          Les 2 principales propriétés pour modifier le contenu d'un élément
+          sont : <code>innerHTML</code> et <code>textContent</code>.
+        </p>
+        <p>
+          <code>innerHTML</code> permet de faire passer du contenu HTML.
+          <code>textContent</code> fait passer du texte sans qu'il soit
+          interprété comme du HTML
+        </p>
+        <h4>Exemple avec innerHTML</h4>
+        <p id="exInnerHTML">Je suis le texte originel.</p>
+        <h4>Exemple avec textContent</h4>
+        <p id="exTextContent">Pareil, mais je vais dégager.</p>
+        <p>
+          On va toujours privilégier textContent s'il n'y a pas de balises HTML
+          dans le texte que l'on va injecter.
+        </p>
+
+        <h3>Modifions nos classes</h3>
+
+        <p>On accède à la liste des classes d'un élément grâce la propriété <code>classList</code>. Elle fournit une série de fonctions permettant de modifier nos classes, comme son nom l'indique.</p>
+        <ul id="exClassList">
+            <li class="blue">add() qui permet d'ajouter une classe à l'élément</li>
+            <li class="blue">remove() qui permet de supprimer une classe</li>
+            <li class="blue">replace() qui permet de remplacer une classe par une autre</li>
+            <li class="blue toto">contains() qui permet de vérifier si l'élement contient bien cette classe</li>
+        </ul>
+      </section>
+    </main>
 
     <!-- Je lie mon fichier JS à mon document HTML -->
     <script src="assets/js/dom.js"></script>
