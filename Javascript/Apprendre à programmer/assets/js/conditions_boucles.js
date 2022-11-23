@@ -99,7 +99,7 @@ if (myLegitBoolean === myFakeBoolean) {
     console.log("J'ai cassé la Matrice");
 }
 else {
-    console.log("legit est différent de fake    ")
+    console.log("legit est différent de fake");
 }
 
 // Mettons ça en pratique de façon plus concrète :
@@ -264,3 +264,32 @@ const passengers = [
 for(let passenger of passengers) {
     console.log(`J'embarque ${passenger.name} avec le numéro de ticket : ${passenger.ticketNumber}`);
 }
+
+// LA BOUCLE WHILE (Tant que)
+
+/**
+ * La boucle while va vérifier si une condition est vraie. Si elle l'est, alors la boucle continue; sinon elle s'arrête.
+ */
+
+//  il reste 12 places
+let seatsLeft = 12;
+// Il y a 8 passagers qui attendent de monter
+let passengersWaiting = 28;
+// Il n'y a aucun d'embarqué pour le moment
+let passagersBoarded = 0;
+
+while (
+        // tant que les sièges restants sont supérieurs à 0
+        seatsLeft > 0 
+        // et que les passagers qui attendent aussi
+        && passengersWaiting > 0
+    ) {
+        // alors on incrémente les passagers qui embarquent
+        passagersBoarded++;
+        // on décrémente les passagers qui attendent sur le quai
+        passengersWaiting--;
+        // on réduit les sièges restants jusqu'à 0
+        seatsLeft--;
+}
+
+console.log(passagersBoarded);
