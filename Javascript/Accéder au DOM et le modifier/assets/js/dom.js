@@ -71,7 +71,7 @@ const main = document.getElementById("main");
  */
 
 // MODIFIONS LE DOM
-let javascript = "JavaScript";
+const javascript = "JavaScript ©";
 // innerHTML 
 let injectionHTML = document.getElementById("exInnerHTML");
 injectionHTML.innerHTML = `<b>Je suis injecté depuis ${javascript} grâce à <u>innerHTML</u></b>`;
@@ -79,12 +79,11 @@ injectionHTML.innerHTML = `<b>Je suis injecté depuis ${javascript} grâce à <u
 let injectionText = document.getElementById("exTextContent");
 injectionText.textContent = "<b>Pareil, mais avec <u>textContent</u></b>";
 
-
 // MODIFIONS LES CLASSES
-
 
 // Je cible la 1ère puce du bloc avec l'id exClassList
 let addClassBigFont = document.querySelector("#exClassList li:first-of-type");
+// J'ajoute les classes bigFont et bold
 addClassBigFont.classList.add("bigFont", "bold");
 
 // Je cible la 2ème puce (li) du bloc avec l'id exClassList 
@@ -96,3 +95,19 @@ deleteClassBlue.classList.remove("blue");
 let replaceClassBlue = document.querySelector("#exClassList li:nth-child(3)");
 // je remplace le classe blue par la classe red, sous forme replace("old", "new")
 replaceClassBlue.classList.replace("blue", "red");
+
+// TURBO-INDICE :
+let mesVideos = [vid1, vid2, vid3];
+let htmlElements = "";
+
+for (let video of mesVideos) {
+    htmlElements +=
+    `
+        <div class="myCard">
+            <h3>${video.title}</3>
+            <p>Un film de ${video.director}</p>
+            etc...
+        </div>
+    `
+    document.getElementById("monId").innerHTML = htmlElements;
+}
