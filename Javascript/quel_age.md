@@ -11,7 +11,7 @@ Adam : 19
 Lynda : 21
 Kylian : 22
 
-Je veux afficher **dynamiquement** :
+Je veux afficher **dynamiquement** sur une page :
 * le nombre d'élèves
 * l'âge total cumulé
 * la moyenne d'âge
