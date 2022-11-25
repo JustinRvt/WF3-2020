@@ -12,6 +12,11 @@ Je dois afficher toutes ces oeuvres dans la console (pour le moment).
 Maintenant, je dois afficher les films grâce à une boucle sur la page d'accueil
 
 
-Prochaine étape, calculer les %ages de visionnage par film, puis en tout.
+Prochaine étape, calculer les %ages de visionnage par film, puis de toute la collection. Ensuite le temps total potentiellement visionnable de la vidéothéque.
 Afficher les durées en heures et plus en minutes
 Appliquer un signe distinctif (fontawesome ?) selon l'état du visionnage (vu à 100% ou non)
+
+Pour chaque film, j'ai besoin d'un ID (unique donc). Grâce à la propriété [URLSearchParams][https://developer.mozilla.org/fr/docs/Web/API/URLSearchParams], je veux récupérer cet ID sur une page (vue produit) qui affichera la fiche complète de mon film. 
+
+/!\ Pensez à définir le lien vers la vue au moyen de l'id, par exemple :
+#### <a href="fiche-film.html?xxxxxxxxx>">mon lien</a> xxxxxxx étant l'id
