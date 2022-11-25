@@ -48,3 +48,30 @@
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   }
+
+  .poster-movie {
+    object-fit: cover;
+    height:25em;
+  }
+
+  .text-ellipsis--3 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
+    /* 3 lignes supplémentaires */
+    display: -webkit-box ! important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .validationLecture {
+    margin:0 0 0 0.3em;
+}
+
+.vert {
+    color:green;
+}
+
+.rouge {
+    color:red;  
+}
