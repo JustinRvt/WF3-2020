@@ -65,12 +65,16 @@ const elementCreation = () => {
     divButtonGroup = document.createElement("div");
     divButtonGroup.classList.add("btn-group");
     divAlignSettings.appendChild(divButtonGroup);
+    // a - _id
+    const aLienFiche = document.createElement("a");
+    aLienFiche.href = `films/fiche-detail.html?id=${film._id}`;
+    divButtonGroup.appendChild(aLienFiche);
     // button.btn.btn-sm.btn-outline.success
     buttonMoreInformation = document.createElement("button");
     buttonMoreInformation.classList.add("btn", "btn-sm", "btn-outline-success");
     buttonMoreInformation.setAttribute("type", "button");
     buttonMoreInformation.textContent = "voir la fiche du film";
-    divButtonGroup.appendChild(buttonMoreInformation);
+    aLienFiche.appendChild(buttonMoreInformation);
     // small.text-muted
     smallDuration = document.createElement("small");
     smallDuration.classList.add("text-muted");

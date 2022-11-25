@@ -8,11 +8,13 @@ class Film {
         this.description = description;
         this.dureeTotale = dureeTotale;
         this.dureeVisionne = dureeVisionne;
-        this.poster = titre
+        this._id = titre
                         .toLowerCase()
                         .replace(remplacement, "_")
-                        .replace(":", "")
-                        +".jpg";
+                        .replace(":", "");
+        this.poster = this._id+".jpg";
+                        
+
                         
     }
     // Je crée une fonction pour vérifier si le film a été visionné en entier
