@@ -21,3 +21,4 @@ Pour chaque film, j'ai besoin d'un ID (unique donc). Grâce à la propriété [U
 /!\ Pensez à définir le lien vers la vue au moyen de l'id, par exemple :
 #### <a href="fiche-film.html?xxxxxxxxx>">mon lien</a> xxxxxxx étant l'id
 
+const monFilm = new URLSearchParams(window.location.search).get("id");

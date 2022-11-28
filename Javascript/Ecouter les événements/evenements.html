@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Écoutons les événements</title>
+</head>
+<body>
+    <header>
+        <h1>Écoutons les événements</h1>
+    </header>
+    <main>
+        <section>
+            <h2>
+                Définition
+            </h2>
+            <p>Un événement est une <strong>réaction</strong> suite à une <strong>action</strong> de l'utilisateur.</p>
+            <p>En Javascript, ils sont représetés par un nom (click, onMouseOver, etc.) et une fonction appelée <code>callback</code>. Par défaut, un événement va être "propagé", ce qui signifie que si nous n'indiquons rien, il sera transmis à l'élément parent et ce, jusqu'à la racine. </p>
+            <p>Cette fonction de callback, c'est nous qui la spécifions. On l'appelle à chaque fois l'action que l'on souhaite suivre sera réalisée. Si l'on désire suivre le clic sur un élément, notre fonction de callback sera appelée à chaque fois que l'utilisateur va cliquer dessus.</p>
+        </section>
+        <h2>Réagissons au clic</h2>
+        <p>Pour réagir au clic, il nous faut <strong>écouter cet événement</strong>. Il existe une fonction pour cela : <code>addEventListener()</code> qui permet d'écouter tout type d'événemnt.</p>
+        <p><a href="https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener" target="_blank"><code>addEventListener( event, callback)</code></a> a prendre en paramètres 2 choses : le nom de l'événément à écouter et la fonction à appeler lors de l'éxécution.
+            <h3>L'événement onclick</h3>
+            <p>Nous voulons réagir de la souris, il faut d'abord récupérer l'élement qui correspond à notre lien, ensuite appeler la méthode <code>element.addEventListener("click", "onClick")</code>.</p>
+            <p><code>onClick</code> correspond à la fonction que l'on va définir à chaque fois que l'utilisateur clique sur notre lien.</p>
+            <a href="../Apprendre à programmer/variables_objets_tableaux.html" id="mon-lien">Direction les variables, objets et tableaux</a>
+            <h3>preventDefault()</h3>
+            <p>Pour prévenir le comportement par défaut de notre lien (se rendre sur la page souhaitée) et afin d'afficher un message à l'utilisateur, notre fonction de callback peut prendre un paramètre qui correspond au contenu de l'événement qui vient de se produire.</p>
+            <p>En appelant cette fonction dans notre callback on dit au gestionnaires des événements de ne pas éxécuter le comportement par défaut de l'élément (en l'occurence, la redirection du lien vers une nouvelle page).</p>
+
+    </main>    
+    <!-- SCRIPTS -->
+    <script src="assets/js/evenements.js"></script>
+</body>
+</html>
