@@ -6,17 +6,17 @@ let personne2 = "Paul";
 let person3 = "Marcel";
 
 //On met la première lettre en majuscule, on salue la première personne et on donne le nombre de lettre dans son prénom
-personne1 = personne1[0].toUpperCase() + personne1.substr(1);
+personne1 = personne1[0].toUpperCase() + personne1.substring(1);
 const longueurPrenom1 = personne1.length;
 console.log(`Bonjour ${personne1}, ton prénom contient ${longueurPrenom1} lettres`);
 
 //On met la première lettre en majuscule, on salue la deuxième personne et on donne le nombre de lettre dans son prénom
-personne2 = personne2[1].toUpperCase() + personne2.substr(1);
+personne2 = personne2[1].toUpperCase() + personne2.substring(1);
 const longueurPrenom2 = personne2.length;
 console.log(`Bonjour ${personne2}, ton prénom contient ${longueurPrenom2} lettres`);
 
 //On met la première lettre en majuscule, on salue la troisième personne et on donne le nombre de lettre dans son prénom
-personne3 = personne3[2].toUpperCase() + personne3.substr(1);
+personne3 = personne3[2].toUpperCase() + personne3.substring(1);
 const longueurPrenom3 = personne3.length;
 console.log(`Bonjour ${personne3}, ton prénom contient ${longueurPrenom3} lettres`);
 
