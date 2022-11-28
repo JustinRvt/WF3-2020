@@ -67,6 +67,8 @@ Politesse.direBonjourA("Matin");
 
 /**
  * NE VOUS RÉPÉTEZ PAS (DRY => DO NOT REAPEAT YOURSELF)
+ * 
+ * La refactorisation du code consiste à modifier la structure d'un bout de code sans changer son comportement
  */
 
 // prenons cet exemple :
@@ -94,5 +96,15 @@ if(utilisateur3.enLigne) {
     }
     else {
         console.log(`Bienvenue sur votre compte premium ${utilisateur3}`);
+    }
+}
+
+// correction :
+const envoiMessageUtilisateur = (utilisateur) => {
+    if (utilisateur === "normal"){
+        console.log(`Salut ${utilisateur} !`)
+    }
+    else {
+        console.log(`Bienvenue sur votre compte premium ${utilisateur}`);
     }
 }
