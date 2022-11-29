@@ -1,5 +1,5 @@
-// import * as global from "./utils/global.js";
-// console.log(global)
+// Base URL
+const baseURL = window.location.origin;
 // Mon nom
 const brand = "Ma vidéothèque perso";
 // Mon logo
@@ -22,7 +22,7 @@ const urlWebsite =
   ".fr";
 
 // Promesse pour afficher le layout header sur toutes les pages
-fetch("layout/header.html")
+fetch(`${baseURL}/layout/header.html`)
   .then((response) => {
     return response.text();
   })
@@ -34,7 +34,7 @@ fetch("layout/header.html")
   });
 
 // Promesse pour afficher le layout footer sur toutes les pages
-  fetch("layout/footer.html")
+  fetch(`${baseURL}/layout/footer.html`)
   .then((response) => {
     return response.text();
   })
