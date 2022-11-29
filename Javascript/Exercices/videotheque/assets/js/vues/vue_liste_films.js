@@ -5,11 +5,7 @@ const listeFilms = document.getElementById("listeFilms");
 // Je crée une fonction avec une boucle for of pour récupérer mes films
 const elementCreation = () => {
   for (let film of films) {
-    // Je calcule le %age de visionnage
-    const calculPourcentageVisionnage = () =>
-      "soit " + (100 - (film.dureeVisionne / film.dureeTotale) * 100).toFixed(0) +
-      "% restants";
-
+    
     // Est-ce que le film est déjà vu ?
     if (film.dejaVuCondition) {
       // Si oui, alors je passe un check vert de fontawesome
@@ -20,7 +16,7 @@ const elementCreation = () => {
       estDejaVu = "<i class='far fa-times-circle rouge'></i>";
     //   si besoin, on peut afficher le temps restant
     //   tempsRestant = film.dureeTotale - film.dureeVisionne;
-      calculPourcentageVisionnageAffichage = calculPourcentageVisionnage();
+      calculPourcentageVisionnageAffichage = film.calculPourcentageVisionnage();
     }
 
     // je crée des éléments que je vais ajouter avec appenChild()
@@ -73,6 +69,14 @@ const elementCreation = () => {
       "align-items-center"
     );
     divCardBody.appendChild(divAlignSettings);
+    // small.text-muted
+    smallDuration = document.createElement("small");
+    smallDuration.classList.add("text-muted");
+    // Ici, j'appelle la fonction minutesToHoursConversion contenue dans utils
+    smallDuration.innerHTML = `${minutesToHoursConversion(
+      film.dureeTotale
+    )} mins <br>${calculPourcentageVisionnageAffichage}`;
+    divAlignSettings.appendChild(smallDuration);
     // div.btn-group
     divButtonGroup = document.createElement("div");
     divButtonGroup.classList.add("btn-group");
@@ -87,14 +91,6 @@ const elementCreation = () => {
     buttonMoreInformation.setAttribute("type", "button");
     buttonMoreInformation.textContent = "voir la fiche du film";
     aLienFiche.appendChild(buttonMoreInformation);
-    // small.text-muted
-    smallDuration = document.createElement("small");
-    smallDuration.classList.add("text-muted");
-    // Ici, j'appelle la fonction minutesToHoursConversion contenue dans utils
-    smallDuration.innerHTML = `${minutesToHoursConversion(
-      film.dureeTotale
-    )} mins <br>${calculPourcentageVisionnageAffichage}`;
-    divAlignSettings.appendChild(smallDuration);
   }
 };
 

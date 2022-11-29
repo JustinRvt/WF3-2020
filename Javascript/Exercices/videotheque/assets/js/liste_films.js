@@ -18,6 +18,7 @@ class Film {
                         
     }
     // Je crée une fonction pour vérifier si le film a été visionné en entier
+    // J'ai besoin du get afin de lancer ma fonction
     get dejaVuCondition() {       
         // si la durée totale = la durée visionnée
         if (this.dureeTotale === this.dureeVisionne) {
@@ -29,7 +30,10 @@ class Film {
             return false;
         }
     }
-
+    // Je calcule le %age de visionnage
+     calculPourcentageVisionnage = () =>
+      "soit " + (100 - (this.dureeVisionne / this.dureeTotale) * 100).toFixed(0) +
+      "% restants";
 }
 
 // j'instancie mes films dans un tableau
