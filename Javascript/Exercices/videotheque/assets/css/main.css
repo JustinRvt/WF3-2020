@@ -100,3 +100,9 @@ footer {
   color:black;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.bgHero {
+    background-repeat: no-repeat;
+    background-size:cover;
+    min-height: 40em;
+}

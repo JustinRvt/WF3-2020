@@ -12,14 +12,18 @@ console.log(films.find(rechercheId));
 
 let ficheDeFilm = films.find(rechercheId);
 
-console.log(ficheDeFilm.titre);
-console.log(ficheDeFilm.realisateur);
-console.log(ficheDeFilm.description);
-console.log(ficheDeFilm.dureeTotale);
+// document.body.classList.add("d-flex", "h-100", "text-center");
 
-let filmElements = `
-    <h1>${ficheDeFilm.titre}</h1>
-`
+const ficheDetail = document.getElementById("fiche-detail");
+// création section container + bg
+const sectionHeroContainer = document.createElement("section");
+sectionHeroContainer.classList.add("cover-container", "d-flex", "w-100", "h-100","p-3", "mx-auto","flex-column");
+sectionHeroContainer.style.backgroundImage = `url(${baseURL}/assets/img/affiches_films/background/${ficheDeFilm.bg_image})`;
+sectionHeroContainer.classList.add("bgHero");
+ficheDetail.appendChild(sectionHeroContainer);
 
-let matin = document.getElementById("exempleMatin");
-matin.innerHTML = filmElements;
+// h1
+const h1Hero = document.createElement("h1");
+h1Hero.textContent = ficheDeFilm.titre;
+h1Hero.style.color = "white";
+sectionHeroContainer.appendChild(h1Hero);

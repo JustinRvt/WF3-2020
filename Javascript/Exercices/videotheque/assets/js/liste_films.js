@@ -12,7 +12,8 @@ class Film {
                         .toLowerCase()
                         .replace(remplacement, "_")
                         .replace(":", "");
-        this.poster = this._id+".jpg";
+        this.poster = `${this._id}.jpg`;
+        this.bg_image = `bg_${this.poster}`;
                         
 
                         
