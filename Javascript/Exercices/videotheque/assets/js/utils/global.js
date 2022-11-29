@@ -1,0 +1,20 @@
+// Mon nom
+export const brand = "Ma vidéothèque perso";
+// Mon logo
+export const logo = "<i class=\"fa-solid fa-film\"></i>"
+// Baseline
+export const baseline = "Retrouvez tous les titres qui m'ont marqué !"
+
+
+export let remplacement = / /gi;
+// Je vais produire une URL à partir de la const Brand
+export const urlWebsite = brand
+                    // je supprime les espaces les remplacant par ""
+                    .replace(remplacement, "")
+                    // je supprime les accents
+                    .replace("é", "e")
+                    .replace("è", "e")
+                    // je passe le tout en minuscule
+                    .toLowerCase()
+                    // J'utilise la concaténation afin de rajouter le .fr
+                    + ".fr";

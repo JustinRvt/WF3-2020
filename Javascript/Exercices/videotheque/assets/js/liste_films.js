@@ -18,7 +18,7 @@ class Film {
                         
     }
     // Je crée une fonction pour vérifier si le film a été visionné en entier
-    get dejaVuCondition() {
+    get dejaVuCondition() {       
         // si la durée totale = la durée visionnée
         if (this.dureeTotale === this.dureeVisionne) {
             // alors devaVuCondition retourne true

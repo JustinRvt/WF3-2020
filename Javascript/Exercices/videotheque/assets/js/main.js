@@ -1,3 +1,7 @@
+// import {minutesToHoursConversion} from "./utils/minutesToHours.js";
+// console.log(minutesToHoursConversion(90));
+// import * as global from "./utils/global.js";
+// console.log(global)
 // Mon nom
 const brand = "Ma vidéothèque perso";
 // Mon logo

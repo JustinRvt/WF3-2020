@@ -16,7 +16,7 @@
   <!-- Je lance la fonction elementCreation() au chargemment de la page afin d'afficher les films contenus dans mon tableau -->
   <body onload="elementCreation()">
     <!-- DEBUT HEADER -->
-    <header>
+    <header class="fixed-top">
       <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
           <div class="row">
@@ -42,8 +42,7 @@
       </div>
       <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-            
+          <a href="index.html" class="navbar-brand d-flex align-items-center">            
             <strong id="brand"></strong>
           </a>
           <button
@@ -64,11 +63,11 @@
     <!-- DEBUT MAIN -->
     <main>
         <!-- DEBUT HERO -->
-        <section class="py-5 text-center container">
+        <section class="py-5 text-center container-fluid hero">
             <div class="row py-lg-5">
-              <div class="col-lg-6 col-md-8 mx-auto" id="hero">
+              <div class="col-lg-6 col-md-8 mx-auto pt-3" id="hero">
                 <h1 class="fw-light"></h1>
-                <p class="lead text-muted"></p>
+                <p class="lead rouge"></p>
               </div>
             </div>
         </section>        
@@ -93,18 +92,21 @@
     </footer>
     <!-- FIN FOOTER -->
     <!-- DEBUT SCRIPT -->
-    <script src="assets/vendors/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <!-- DEBUT COMPONENTS -->
-    <script src="assets/js/components/header.js"></script>
-    <script src="assets/js/components/footer.js"></script>
-    <!-- FIN COMPONENTS -->
-    <!-- DEBUT PAGES -->
-    <script src="assets/js/pages/home.js"></script>
-    <!-- FIN PAGES -->
-    <!-- DEBUT GESTION FILMS -->
-    <script src="assets/js/liste_films.js"></script>
-    <script src="assets/js/vues/vue_liste_films.js"></script>
+        <script src="assets/vendors/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <!-- DEBUT FONCTIONS -->
+        <script src="assets/js/utils/minutesToHours.js"></script>
+        <!-- FIN FONCTIONS -->
+        <!-- DEBUT COMPONENTS -->
+        <script src="assets/js/components/header.js"></script>
+        <script src="assets/js/components/footer.js"></script>
+        <!-- FIN COMPONENTS -->
+        <!-- DEBUT PAGES -->
+        <script src="assets/js/pages/home.js"></script>
+        <!-- FIN PAGES -->
+        <!-- DEBUT GESTION FILMS -->
+        <script src="assets/js/liste_films.js"></script>
+        <script src="assets/js/vues/vue_liste_films.js"></script>
     <!-- FIN DES SCRIPTS -->
   </body>
   <!-- FIN DU BODY -->

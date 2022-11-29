@@ -4,16 +4,23 @@
 const listeFilms = document.getElementById("listeFilms");
 // Je crée une fonction avec une boucle for of pour récupérer mes films
 const elementCreation = () => {
-
   for (let film of films) {
-    // On appelle le retour de la fonction qui vérifie si le film a été visionné
-    if (film.dejaVuCondition ===true) {
-        // Si le film a été visionné, on renvoie le check avec la classe vert
-        estDejaVu  = "<i class='fas fa-check vert'></i>";
-    }
-    else {
-        // sinon on renvoie la croix avec la classe rouge
-        estDejaVu = "<i class='far fa-times-circle rouge'></i>";
+    // Je calcule le %age de visionnage
+    const calculPourcentageVisionnage = () =>
+      "soit " + (100 - (film.dureeVisionne / film.dureeTotale) * 100).toFixed(0) +
+      "% restants";
+
+    // Est-ce que le film est déjà vu ?
+    if (film.dejaVuCondition) {
+      // Si oui, alors je passe un check vert de fontawesome
+      estDejaVu = "<i class='fas fa-check vert'></i>";
+      calculPourcentageVisionnageAffichage = "";
+      // Si non, un cercle rouge
+    } else {
+      estDejaVu = "<i class='far fa-times-circle rouge'></i>";
+    //   si besoin, on peut afficher le temps restant
+    //   tempsRestant = film.dureeTotale - film.dureeVisionne;
+      calculPourcentageVisionnageAffichage = calculPourcentageVisionnage();
     }
 
     // je crée des éléments que je vais ajouter avec appenChild()
@@ -27,8 +34,8 @@ const elementCreation = () => {
     divCol.appendChild(divCard);
     // img.poster-movie.img-fluid
     const posterMovie = document.createElement("img");
-    posterMovie.src=`assets/img/${film.poster}`;
-    posterMovie.alt= film.titre;
+    posterMovie.src = `assets/img/affiches_films/${film.poster}`;
+    posterMovie.alt = film.titre;
     posterMovie.classList.add("poster-movie", "img-fluid");
     divCard.appendChild(posterMovie);
     // div.card-body
@@ -50,16 +57,21 @@ const elementCreation = () => {
     divFlex.appendChild(divCheckVisionnage);
     // span
     const spanRealisateur = document.createElement("span");
-    spanRealisateur.innerHTML = `de ${film.realisateur}`;
+    spanRealisateur.innerHTML = `de <b>${film.realisateur}<b>`;
+    spanRealisateur.classList.add("text-muted");
     divCardBody.appendChild(spanRealisateur);
     // p.card-text.text-ellipsis--3 (texte tronqué à 3 lignes)
     const descriptionParagraph = document.createElement("p");
-    descriptionParagraph.classList.add("card-text" ,"text-ellipsis--3");
+    descriptionParagraph.classList.add("card-text", "text-ellipsis--3");
     descriptionParagraph.innerHTML = `Desc : "${film.description}"`;
     divCardBody.appendChild(descriptionParagraph);
     // div.d-flex.justif-content-between.align-items-center
     const divAlignSettings = document.createElement("div");
-    divAlignSettings.classList.add("d-flex", "justify-content-between", "align-items-center");
+    divAlignSettings.classList.add(
+      "d-flex",
+      "justify-content-between",
+      "align-items-center"
+    );
     divCardBody.appendChild(divAlignSettings);
     // div.btn-group
     divButtonGroup = document.createElement("div");
@@ -78,7 +90,10 @@ const elementCreation = () => {
     // small.text-muted
     smallDuration = document.createElement("small");
     smallDuration.classList.add("text-muted");
-    smallDuration.innerHTML = `${film.dureeTotale} mins`;
+    // Ici, j'appelle la fonction minutesToHoursConversion contenue dans utils
+    smallDuration.innerHTML = `${minutesToHoursConversion(
+      film.dureeTotale
+    )} mins <br>${calculPourcentageVisionnageAffichage}`;
     divAlignSettings.appendChild(smallDuration);
   }
 };
@@ -103,5 +118,4 @@ const elementCreation = () => {
 //     </div>
 // </div>
 // `
-
-
+// listeFilms.innerHTML = htmlElements;
