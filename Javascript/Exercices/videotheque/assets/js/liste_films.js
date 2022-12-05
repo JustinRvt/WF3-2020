@@ -46,3 +46,25 @@ const films = [
     new Film("Dobermann", "Jan Kounen", 1997, "Dobermann is the world's most ruthless bank robber and with his gang rob bank after bank, now in Paris. What can the police do but to let the mad, morally bankrupt police commissioner loose on him?", 94, 94),
     new Film("Starship Troopers", "Paul Verhoeven", 1997, "Humans in a fascist, militaristic future wage war with giant alien bugs.", 129, 99)
 ];
+
+const urlFetch = "http://localhost:3000/api/movies"
+const movieFetch = fetch(urlFetch);
+
+movieFetch
+// Les callback ajoutés grâce à .then() seront toujours appelés, après succès ou échec de l'opération asynchrone
+    .then(function(res) {
+        if (res.ok) {
+            return res.json();
+        }
+    })
+    .then(function(data) {
+        // une boucle forEach afin d'afficher nos films
+        data.forEach(movie => {
+            console.log(movie);
+            // La logique de programmation vient ici !
+        });
+    })
+    // on utilise >.catch() pour récupérer une erreur éventuelle
+    .catch(function(err) {
+        console.log(err);
+    });

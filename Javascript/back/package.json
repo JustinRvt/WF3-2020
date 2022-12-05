@@ -1,0 +1,15 @@
+{
+  "name": "apiwf3js",
+  "version": "1.0.0",
+  "description": "C'est toi la description",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ta maman <3",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^3.3.2"
+  }
+}

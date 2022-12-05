@@ -5,7 +5,6 @@ const listeFilms = document.getElementById("listeFilms");
 // Je crée une fonction avec une boucle for of pour récupérer mes films
 const elementCreation = () => {
   for (let film of films) {
-    
     // Est-ce que le film est déjà vu ?
     if (film.dejaVuCondition) {
       // Si oui, alors je passe un check vert de fontawesome
@@ -83,7 +82,7 @@ const elementCreation = () => {
     divAlignSettings.appendChild(divButtonGroup);
     // a - _id
     const aLienFiche = document.createElement("a");
-    aLienFiche.href = `films/fiche-detail.html?id=${film._id}`;
+    aLienFiche.href = `${baseURL}/films/fiche-detail.html?id=${film._id}`;
     divButtonGroup.appendChild(aLienFiche);
     // button.btn.btn-sm.btn-outline.success
     buttonMoreInformation = document.createElement("button");
@@ -95,7 +94,6 @@ const elementCreation = () => {
 };
 
 // VERSION STRING INTERPOLATION
-// listeFilms.appendChild(div);
 // htmlElements += `
 // <div class="col">
 //     <div class="card shadow-sm">
